@@ -132,6 +132,46 @@ function initReveal() {
   elements.forEach((element) => observer.observe(element));
 }
 
+function initHueCursor() {
+  if (!window.matchMedia("(pointer: fine)").matches) return;
+
+  const cursor = document.createElement("div");
+  cursor.className = "hue-cursor";
+  cursor.setAttribute("aria-hidden", "true");
+  cursor.innerHTML = "<span>HUE</span>";
+  document.body.append(cursor);
+
+  const label = cursor.querySelector("span");
+  let x = -100;
+  let y = -100;
+  let frame = 0;
+
+  const paint = () => {
+    cursor.style.left = `${x}px`;
+    cursor.style.top = `${y}px`;
+    frame = 0;
+  };
+
+  window.addEventListener("pointermove", (event) => {
+    x = event.clientX;
+    y = event.clientY;
+    cursor.classList.add("visible");
+    if (!frame) frame = requestAnimationFrame(paint);
+  }, { passive: true });
+
+  document.addEventListener("pointerover", (event) => {
+    const target = event.target.closest("[data-cursor], a, button, summary");
+    const text = target?.dataset.cursor || (target ? "OPEN" : "HUE");
+    label.textContent = text;
+    cursor.classList.toggle("active", Boolean(target));
+  });
+  document.addEventListener("pointerout", (event) => {
+    if (!event.relatedTarget) cursor.classList.remove("visible");
+  });
+  document.addEventListener("pointerdown", () => cursor.classList.add("pressed"));
+  document.addEventListener("pointerup", () => cursor.classList.remove("pressed"));
+}
+
 function initPrivacyForm() {
   const modal = document.querySelector("#privacy-modal");
   if (!modal) return;
@@ -245,8 +285,8 @@ function initProductPage() {
       .filter(([productKey]) => productKey !== key)
       .map(([productKey, item]) => `
         <a class="related-card" href="product.html?blend=${productKey}">
-          <span class="related-image" style="--card-bg:${item.bg};--card-ink:${item.ink}">
-            <img src="${item.pack}" alt="${item.locationKo} ${item.name} 패키지" loading="lazy">
+          <span class="related-image">
+            <img src="${item.detail}" alt="${item.locationKo} ${item.name} 재료와 티백" loading="lazy">
           </span>
           <div><h3>${item.locationKo}</h3><p>${item.flavor}</p></div>
         </a>`).join("");
@@ -255,5 +295,6 @@ function initProductPage() {
 
 initHeader();
 initReveal();
+initHueCursor();
 initPrivacyForm();
 initProductPage();

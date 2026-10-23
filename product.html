@@ -3,43 +3,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f3f0e9">
+  <meta name="theme-color" content="#f2f0eb">
   <title>HUE Collection | 서울의 다섯 시간</title>
   <meta name="description" content="서울의 시간과 장소를 담은 HUE 블렌디드 티 컬렉션.">
+  <link rel="icon" href="assets/images/hue-logo-dark.png">
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
 </head>
 <body class="product-page" data-product-page>
   <a class="skip-link" href="#main">본문으로 바로가기</a>
-  <div class="announcement">
-    <p>서울의 다섯 시간, 첫 블렌드 출시 알림을 받아 보세요.</p>
-    <a href="index.html#apply">자세히 보기 <span aria-hidden="true">↗</span></a>
-  </div>
+  <div class="announcement"><p>서울의 다섯 시간, 첫 블렌드 출시 알림을 받아 보세요.</p><a href="index.html#apply">자세히 보기 <span aria-hidden="true">↗</span></a></div>
 
   <header class="site-header" data-header>
-    <a class="brand" href="index.html" aria-label="HUE 홈">
-      <img src="assets/images/hue-logo-dark.png" alt="HUE">
-      <span>SEOUL · BLENDED TEA</span>
-    </a>
+    <a class="brand" href="index.html" aria-label="HUE 홈"><img src="assets/images/hue-logo-dark.png" alt="HUE"><span>SEOUL · BLENDED TEA</span></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span class="sr-only">메뉴 열기</span></button>
-    <nav class="site-nav" id="site-nav" aria-label="주요 메뉴">
-      <a href="index.html#collection">COLLECTION</a><a href="index.html#story">HUE STORY</a><a href="index.html#ritual">TEA RITUAL</a><a href="index.html#apply">FIRST BLEND</a>
-    </nav>
+    <nav class="site-nav" id="site-nav" aria-label="주요 메뉴"><a class="active" href="shop.html">SHOP</a><a href="index.html#about">ABOUT HUE</a><a href="index.html#collection">THE HOURS</a><a href="index.html#ritual">RITUAL</a></nav>
     <div class="header-tools"><a href="index.html#apply">알림 신청</a><span aria-hidden="true">KR</span></div>
   </header>
 
   <main id="main">
-    <nav class="breadcrumb" aria-label="현재 위치"><a href="index.html">HOME</a><span>/</span><a href="index.html#collection">COLLECTION</a><span>/</span><strong data-product-location>BUKCHON 8:00</strong></nav>
+    <nav class="breadcrumb" aria-label="현재 위치"><a href="index.html">HOME</a><span>/</span><a href="shop.html">SHOP</a><span>/</span><strong data-product-location>BUKCHON 8:00</strong></nav>
 
-    <section class="product-detail">
-      <div class="product-gallery">
-        <figure class="gallery-pack" data-product-tone>
-          <img data-product-pack src="assets/images/pack-bukchon.png" alt="HUE Bukchon 8:00 패키지">
-          <figcaption>HUE COLLECTION 01</figcaption>
-        </figure>
-        <figure><img data-product-detail src="assets/images/detail-bukchon.jpg" alt="Bukchon Earl Grey 블렌드의 재료와 티백"></figure>
-        <figure class="gallery-wide"><img data-product-place src="assets/images/place-bukchon.jpg" alt="북촌의 아침과 HUE Earl Grey"></figure>
-      </div>
+    <section class="product-detail product-detail-redesign">
+      <figure class="product-pack-stage" data-product-tone data-cursor="HUE">
+        <span class="pack-stage-number">COLLECTION 01</span>
+        <img data-product-pack src="assets/images/pack-bukchon.png" alt="HUE Bukchon 8:00 패키지">
+        <figcaption data-product-location>BUKCHON 8:00</figcaption>
+      </figure>
 
       <aside class="product-info" aria-labelledby="product-title">
         <p class="eyebrow" data-product-location>BUKCHON 8:00</p>
@@ -47,11 +37,8 @@
         <p class="product-kicker" data-product-kicker>골목에 첫 빛이 드는 아침.</p>
         <p class="product-description" data-product-description>블랙티 위로 베르가못의 맑은 향과 콘플라워의 푸른 잔향이 이어집니다.</p>
 
-        <div class="product-status">
-          <span>COLLECTION 01</span>
-          <strong>ONLINE RELEASE SOON</strong>
-        </div>
-        <a class="button button-dark product-cta" href="index.html#apply">첫 블렌드 알림 받기</a>
+        <div class="product-status"><span>COLLECTION 01</span><strong>ONLINE RELEASE SOON</strong></div>
+        <a class="button button-dark product-cta" href="index.html#apply" data-cursor="JOIN">첫 블렌드 알림 받기</a>
         <p class="microcopy">현재 판매·결제는 진행되지 않습니다.</p>
 
         <dl class="product-specs">
@@ -63,25 +50,48 @@
         <div class="accordions">
           <details open><summary>THE HOUR <span>+</span></summary><p data-product-hour>북촌의 지붕 위로 아침빛이 번지는 8시. 하루의 첫 장면을 맑게 여는 시간입니다.</p></details>
           <details><summary>THE BLEND <span>+</span></summary><p data-product-notes>또렷한 블랙티, 시트러스 계열의 베르가못, 푸른 콘플라워가 만드는 단정한 균형.</p></details>
-          <details><summary>GIFTING <span>+</span></summary><p>전통 문양과 한지의 결을 현대적으로 풀어낸 HUE 패키지는 한 사람의 시간을 생각하는 선물입니다.</p></details>
+          <details><summary>THE PACKAGE <span>+</span></summary><p>각 동네의 건축과 빛에서 가져온 선을 한지의 결, 매듭의 촉감과 함께 오늘의 패키지로 옮겼습니다.</p></details>
         </div>
       </aside>
     </section>
 
-    <section class="product-quote section-pad" data-product-tone>
-      <p class="section-index">A MOMENT IN SEOUL</p>
-      <blockquote data-product-quote>“아침의 골목은 아직 조용하고,<br>찻잔의 향이 먼저 하루를 엽니다.”</blockquote>
+    <section class="blend-story section-pad">
+      <header class="blend-story-heading reveal">
+        <p class="section-index">MEET THE BLEND</p>
+        <h2 data-product-kicker>골목에 첫 빛이 드는 아침.</h2>
+        <p data-product-description>또렷한 블랙티 위로 베르가못의 맑은 향과 콘플라워의 푸른 잔향이 이어집니다.</p>
+      </header>
+
+      <div class="blend-story-grid">
+        <figure class="blend-ingredients reveal" data-cursor="HUE"><img data-product-detail src="assets/images/detail-bukchon.jpg" alt="Bukchon Earl Grey 블렌드의 재료와 티백"></figure>
+        <div class="blend-story-card reveal">
+          <p class="eyebrow">WHAT'S INSIDE</p>
+          <h3 data-product-name>Earl Grey</h3>
+          <p data-product-notes>또렷한 블랙티, 시트러스 계열의 베르가못, 푸른 콘플라워가 만드는 단정한 균형.</p>
+          <dl><div><dt>BLEND</dt><dd data-product-blend>Black tea blend</dd></div><div><dt>INGREDIENTS</dt><dd data-product-ingredients>블랙티, 베르가못 필, 콘플라워</dd></div></dl>
+        </div>
+        <figure class="blend-place reveal" data-cursor="SCROLL"><img data-product-place src="assets/images/place-bukchon.jpg" alt="북촌의 아침과 HUE Earl Grey"><figcaption data-product-location>BUKCHON 8:00</figcaption></figure>
+        <div class="blend-hour-card reveal" data-product-tone>
+          <p class="eyebrow">THE HOUR</p>
+          <blockquote data-product-quote>“아침의 골목은 아직 조용하고,<br>찻잔의 향이 먼저 하루를 엽니다.”</blockquote>
+          <p data-product-hour>북촌의 지붕 위로 아침빛이 번지는 8시. 하루의 첫 장면을 맑게 여는 시간입니다.</p>
+        </div>
+      </div>
     </section>
 
     <section class="related section-pad" aria-labelledby="related-title">
-      <header><p class="eyebrow">EXPLORE THE COLLECTION</p><h2 id="related-title">다른 시간 만나보기</h2></header>
+      <header><div><p class="eyebrow">SHOP THE OTHER HOURS</p><h2 id="related-title">다른 시간 만나보기</h2></div><a class="text-link" href="shop.html">전체 컬렉션 <span>→</span></a></header>
       <div class="related-grid" data-related-products></div>
     </section>
   </main>
 
   <footer class="site-footer compact-footer">
-    <div class="footer-brand"><img src="assets/images/hue-logo-white.png" alt="HUE"><p>SEOUL · MOMENTS OF MINDFUL TEA</p></div>
-    <div class="footer-links"><div><strong>ABOUT HUE</strong><a href="index.html#story">브랜드 이야기</a></div><div><strong>COLLECTION</strong><a href="index.html#collection">서울의 다섯 시간</a></div><div><strong>FIRST BLEND</strong><a href="index.html#apply">알림 신청</a></div></div>
+    <div class="footer-wordmark">Hue</div>
+    <div class="footer-links">
+      <div><strong>ABOUT HUE</strong><a href="index.html#about">브랜드 이야기</a></div>
+      <div><strong>SHOP</strong><a href="shop.html">전체 블렌드</a></div>
+      <div><strong>FIRST BLEND</strong><a href="index.html#apply">알림 신청</a></div>
+    </div>
     <p class="footer-note">이 페이지는 수업 실습용 페이지입니다. 실제 판매·결제는 이루어지지 않습니다.</p>
   </footer>
 </body>
