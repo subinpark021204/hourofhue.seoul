@@ -30,8 +30,17 @@
         <button class="pack-reveal-button" type="button" data-package-reveal data-cursor="UNFOLD" aria-expanded="false" aria-label="HUE Bukchon 8:00 패키지 펼쳐보기">
           <img class="pack-closed-view" data-product-pack src="assets/images/pack-bukchon.png" alt="HUE Bukchon 8:00 닫힌 패키지">
           <img class="pack-open-view" data-product-open src="assets/images/open-bukchon.jpg" alt="HUE Bukchon 8:00 펼친 패키지">
-          <span class="pack-reveal-hint"><span data-pack-action>CLICK TO UNFOLD</span><small>PACKAGE STORY</small></span>
+          <span class="pack-reveal-hint"><span data-pack-action>CLICK TO UNFOLD</span><small>SWIPE · CLICK · ARROWS</small></span>
         </button>
+        <div class="pack-gallery-controls" role="group" aria-label="패키지 이미지 넘기기">
+          <button type="button" data-pack-prev aria-label="닫힌 패키지 보기" disabled>←</button>
+          <button type="button" data-pack-next aria-label="펼친 패키지 보기">→</button>
+        </div>
+        <span class="pack-gallery-count"><strong data-pack-current>01</strong> / 02</span>
+        <div class="pack-gallery-dots" role="group" aria-label="패키지 이미지 선택">
+          <button class="is-active" type="button" data-pack-index="0" aria-label="닫힌 패키지" aria-pressed="true"></button>
+          <button type="button" data-pack-index="1" aria-label="펼친 패키지" aria-pressed="false"></button>
+        </div>
         <figcaption data-product-location>BUKCHON 8:00</figcaption>
       </figure>
 

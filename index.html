@@ -39,10 +39,38 @@
 
   <main id="main">
     <section class="brand-hero">
-      <figure class="brand-hero-media reveal" data-cursor="HUE">
-        <img src="assets/images/place-bukchon.jpg" alt="북촌의 아침빛과 HUE 얼그레이 티">
-        <figcaption>BUKCHON · 08:00</figcaption>
-      </figure>
+      <div class="brand-hero-map reveal" aria-label="서울의 다섯 동네에서 HUE 블렌드를 고르는 지도">
+        <div class="map-meta"><span>SEOUL · FIVE HOURS</span><span>CLICK A TEA BAG TO SHOP</span></div>
+        <svg class="seoul-map" viewBox="0 0 720 620" aria-hidden="true">
+          <defs>
+            <pattern id="map-grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="currentColor" stroke-width=".7"/></pattern>
+          </defs>
+          <rect width="720" height="620" fill="url(#map-grid)" opacity=".18"/>
+          <path class="map-land" d="M87 315 61 281l27-34 2-62 59-26 59-10 35-46 72-21 39 21 52-12 45 37 72 2 31 43 58 32 25 60-18 52 34 51-26 54-60 14-35 50-63 6-41 47-66-18-59 18-51-39-62 7-31-47-62-17-17-54 35-42Z"/>
+          <g class="map-districts">
+            <path d="M149 159 170 236 119 303M208 149l37 75-75 64M243 103l38 89 70-89M315 82l9 91 82 14M406 91l-35 91 86 56M451 128l23 96 80-51M523 130l-22 116 86 19M88 247l102 43-26 92M190 290l82-42 53 80M272 248l85-26 62 70M357 222l48 70 96-46M119 382l89-25 45 74M208 357l76-29 61 74M284 328l76 61 59-97M360 389l83-57 57 76M443 332l87 40 57-107M164 382l-9 80M253 431l-1 78M345 402l9 109M419 389l35 91M500 408l-19 78"/>
+          </g>
+          <path class="map-river" d="M65 358c92-45 154 54 246 15 76-32 116-29 176 7 59 35 102 10 166-27"/>
+          <text class="map-water-label" x="538" y="405">HAN RIVER</text>
+        </svg>
+
+        <a class="map-marker marker-yeonnam" href="product.html?blend=yeonnam" style="--tea:#dfa08c;--tea-ink:#4e312b" data-cursor="SHOP" aria-label="연남 6시 42분 Rose Hibiscus 쇼핑하기">
+          <span class="map-teabag" aria-hidden="true"><i class="map-tea-string"></i><i class="map-tea-pouch"><b>✣</b></i><i class="map-tea-tag"><strong>Hue</strong><small>YEONNAM<br>6:42</small></i></span><span class="map-marker-name">YEONNAM · 18:42</span>
+        </a>
+        <a class="map-marker marker-seochon" href="product.html?blend=seochon" style="--tea:#e6dfc8;--tea-ink:#514d3b" data-cursor="SHOP" aria-label="서촌 11시 Pear White Tea 쇼핑하기">
+          <span class="map-teabag" aria-hidden="true"><i class="map-tea-string"></i><i class="map-tea-pouch"><b>✣</b></i><i class="map-tea-tag"><strong>Hue</strong><small>SEOCHON<br>11:00</small></i></span><span class="map-marker-name">SEOCHON · 11:00</span>
+        </a>
+        <a class="map-marker marker-bukchon" href="product.html?blend=bukchon" style="--tea:#b9c5c9;--tea-ink:#243239" data-cursor="SHOP" aria-label="북촌 8시 Earl Grey 쇼핑하기">
+          <span class="map-teabag" aria-hidden="true"><i class="map-tea-string"></i><i class="map-tea-pouch"><b>✣</b></i><i class="map-tea-tag"><strong>Hue</strong><small>BUKCHON<br>8:00</small></i></span><span class="map-marker-name">BUKCHON · 08:00</span>
+        </a>
+        <a class="map-marker marker-seongsu" href="product.html?blend=seongsu" style="--tea:#96503e;--tea-ink:#fff4e7" data-cursor="SHOP" aria-label="성수 4시 Roasted Cacao 쇼핑하기">
+          <span class="map-teabag" aria-hidden="true"><i class="map-tea-string"></i><i class="map-tea-pouch"><b>✣</b></i><i class="map-tea-tag"><strong>Hue</strong><small>SEONGSU<br>4:00</small></i></span><span class="map-marker-name">SEONGSU · 16:00</span>
+        </a>
+        <a class="map-marker marker-haebangchon" href="product.html?blend=haebangchon" style="--tea:#293a59;--tea-ink:#fff8e9" data-cursor="SHOP" aria-label="해방촌 자정 Blue Hour Chamomile 쇼핑하기">
+          <span class="map-teabag" aria-hidden="true"><i class="map-tea-string"></i><i class="map-tea-pouch"><b>✣</b></i><i class="map-tea-tag"><strong>Hue</strong><small>HAEBANG<br>0:00</small></i></span><span class="map-marker-name">HAEBANGCHON · 00:00</span>
+        </a>
+        <p class="map-caption">FIVE PLACES · FIVE HOURS · FIVE BLENDS</p>
+      </div>
       <div class="brand-hero-copy reveal">
         <p class="eyebrow">MOMENTS OF MINDFUL TEA</p>
         <h1><span>서울의 시간을</span><span>한 잔의 감각으로.</span></h1>

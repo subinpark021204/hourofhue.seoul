@@ -319,13 +319,59 @@ function initPackageReveal() {
   if (!button) return;
 
   const action = button.querySelector("[data-pack-action]");
-  button.addEventListener("click", () => {
-    const open = !button.classList.contains("is-open");
+  const previous = document.querySelector("[data-pack-prev]");
+  const next = document.querySelector("[data-pack-next]");
+  const current = document.querySelector("[data-pack-current]");
+  const dots = [...document.querySelectorAll("[data-pack-index]")];
+  let pointerStart = null;
+  let swiped = false;
+
+  const setOpen = (open) => {
     button.classList.toggle("is-open", open);
     button.setAttribute("aria-expanded", String(open));
     button.setAttribute("aria-label", open ? "펼친 패키지 닫기" : "패키지 펼쳐보기");
     if (action) action.textContent = open ? "CLICK TO CLOSE" : "CLICK TO UNFOLD";
+    if (current) current.textContent = open ? "02" : "01";
+    if (previous) previous.disabled = !open;
+    if (next) next.disabled = open;
+    dots.forEach((dot, index) => {
+      const active = index === (open ? 1 : 0);
+      dot.classList.toggle("is-active", active);
+      dot.setAttribute("aria-pressed", String(active));
+    });
+  };
+
+  button.addEventListener("pointerdown", (event) => {
+    pointerStart = event.clientX;
+    swiped = false;
   });
+  button.addEventListener("pointerup", (event) => {
+    if (pointerStart === null) return;
+    const distance = event.clientX - pointerStart;
+    pointerStart = null;
+    if (Math.abs(distance) < 42) return;
+    swiped = true;
+    setOpen(distance < 0);
+    setTimeout(() => { swiped = false; }, 0);
+  });
+  button.addEventListener("click", () => {
+    if (swiped) return;
+    setOpen(!button.classList.contains("is-open"));
+  });
+  button.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      setOpen(true);
+    }
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      setOpen(false);
+    }
+  });
+
+  previous?.addEventListener("click", () => setOpen(false));
+  next?.addEventListener("click", () => setOpen(true));
+  dots.forEach((dot) => dot.addEventListener("click", () => setOpen(dot.dataset.packIndex === "1")));
 }
 
 initHeader();
