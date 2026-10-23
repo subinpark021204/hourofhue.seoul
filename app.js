@@ -330,7 +330,7 @@ function initPackageReveal() {
     button.classList.toggle("is-open", open);
     button.setAttribute("aria-expanded", String(open));
     button.setAttribute("aria-label", open ? "펼친 패키지 닫기" : "패키지 펼쳐보기");
-    if (action) action.textContent = open ? "CLICK TO CLOSE" : "CLICK TO UNFOLD";
+    if (action) action.textContent = open ? "CLICK TO CLOSE" : "CLICK TO OPEN";
     if (current) current.textContent = open ? "02" : "01";
     if (previous) previous.disabled = !open;
     if (next) next.disabled = open;
