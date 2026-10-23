@@ -14,7 +14,7 @@ const HUE_PRODUCTS = {
     pack: "assets/images/pack-bukchon.png",
     detail: "assets/images/detail-bukchon.jpg",
     ritual: "assets/images/ritual-bukchon.jpg",
-    open: "assets/images/open-bukchon.jpg",
+    open: "assets/images/open-bukchon.webp",
     place: "assets/images/place-bukchon.jpg",
     bg: "#a8afb0",
     ink: "#17272e"
@@ -34,7 +34,7 @@ const HUE_PRODUCTS = {
     pack: "assets/images/pack-seochon.png",
     detail: "assets/images/detail-seochon.jpg",
     ritual: "assets/images/ritual-seochon.jpg",
-    open: "assets/images/open-seochon.jpg",
+    open: "assets/images/open-seochon.webp",
     place: "assets/images/place-seochon.jpg",
     bg: "#ded9c8",
     ink: "#474638"
@@ -54,7 +54,7 @@ const HUE_PRODUCTS = {
     pack: "assets/images/pack-seongsu.png",
     detail: "assets/images/detail-seongsu.jpg",
     ritual: "assets/images/ritual-seongsu.jpg",
-    open: "assets/images/open-seongsu.jpg",
+    open: "assets/images/open-seongsu.webp",
     place: "assets/images/place-seongsu.jpg",
     bg: "#8a4939",
     ink: "#f4e7d4"
@@ -74,7 +74,7 @@ const HUE_PRODUCTS = {
     pack: "assets/images/pack-yeonnam.png",
     detail: "assets/images/detail-yeonnam.jpg",
     ritual: "assets/images/ritual-yeonnam.jpg",
-    open: "assets/images/open-yeonnam.jpg",
+    open: "assets/images/open-yeonnam.webp",
     place: "assets/images/place-yeonnam.jpg",
     bg: "#d18e78",
     ink: "#472d28"
@@ -94,7 +94,7 @@ const HUE_PRODUCTS = {
     pack: "assets/images/pack-haebangchon.png",
     detail: "assets/images/detail-haebangchon.jpg",
     ritual: "assets/images/ritual-haebangchon.jpg",
-    open: "assets/images/open-haebangchon.jpg",
+    open: "assets/images/open-haebangchon.webp",
     place: "assets/images/place-haebangchon.jpg",
     bg: "#22283b",
     ink: "#eee9dc"
@@ -285,7 +285,7 @@ function initProductPage() {
     ["[data-product-pack]", product.pack, `${product.locationKo} ${product.name} 패키지`],
     ["[data-product-detail]", product.detail, `${product.name} 블렌드의 재료와 티백`],
     ["[data-product-ritual]", product.ritual, `${product.name}의 재료, 우린 차와 전통 문양 티백`],
-    ["[data-product-open]", product.open, `${product.locationKo} ${product.name} 패키지를 펼친 모습`],
+    ["[data-product-open]", product.open, `${product.locationKo} ${product.name} 문이 열린 패키지와 내부 티백`],
     ["[data-product-place]", product.place, `${product.locationKo}의 시간과 ${product.name}`]
   ];
   images.forEach(([selector, src, alt]) => {

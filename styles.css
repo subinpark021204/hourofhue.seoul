@@ -642,15 +642,10 @@ body { background: #f2f0eb; }
 .product-pack-stage::after { position: absolute; inset: 0; content: ""; background: radial-gradient(circle at 50% 46%,rgba(255,255,255,.32),transparent 55%); }
 .pack-reveal-button { position: absolute; z-index: 1; inset: 0; width: 100%; height: 100%; display: grid; place-items: center; padding: 0; border: 0; color: inherit; background: transparent; cursor: pointer; overflow: hidden; }
 .pack-reveal-button:focus-visible { outline: 2px solid currentColor; outline-offset: -8px; }
-.pack-door-set { position: relative; z-index: 2; width: min(56%,560px); height: 82vh; transform-style: preserve-3d; filter: drop-shadow(0 40px 34px rgba(25,23,19,.2)); transition: filter .8s ease; }
-.pack-door { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; backface-visibility: hidden; transition: transform 1s var(--ease), opacity .65s ease, filter .65s ease; }
-.pack-door-left { clip-path: inset(0 50% 0 0); transform-origin: left center; }
-.pack-door-right { clip-path: inset(0 0 0 50%); transform-origin: right center; }
-.pack-open-view { position: absolute; z-index: 1; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 46%; opacity: 0; transform: scale(.94); filter: saturate(.85); transition: opacity .55s ease .14s, transform 1.05s var(--ease), filter .8s ease; }
-.pack-reveal-button.is-open .pack-door-set { filter: drop-shadow(0 18px 22px rgba(25,23,19,.14)); }
-.pack-reveal-button.is-open .pack-door-left { opacity: .9; transform: translateX(-2%) rotateY(-74deg); filter: brightness(.88); }
-.pack-reveal-button.is-open .pack-door-right { opacity: .9; transform: translateX(2%) rotateY(74deg); filter: brightness(.88); }
-.pack-reveal-button.is-open .pack-open-view { opacity: 1; transform: scale(1); filter: saturate(1); }
+.pack-closed-view { position: relative; z-index: 2; width: min(56%,560px); height: 82vh; object-fit: contain; filter: drop-shadow(0 40px 34px rgba(25,23,19,.2)); transform-origin: center; transition: opacity .3s ease .08s, transform .85s var(--ease), filter .6s ease; }
+.pack-open-view { position: absolute; z-index: 1; inset: 0; width: 92%; height: 88vh; margin: auto; object-fit: contain; opacity: 0; clip-path: inset(0 48% 0 48%); filter: drop-shadow(0 35px 32px rgba(25,23,19,.17)) saturate(.9); transform: scaleX(.64) scale(.92); transform-origin: center; transition: opacity .25s ease .14s, clip-path 1.05s var(--ease), transform 1.05s var(--ease), filter .7s ease; }
+.pack-reveal-button.is-open .pack-closed-view { opacity: 0; filter: blur(3px) drop-shadow(0 8px 12px rgba(25,23,19,.08)); transform: scaleX(.68) scale(.94); }
+.pack-reveal-button.is-open .pack-open-view { opacity: 1; clip-path: inset(0); filter: drop-shadow(0 35px 32px rgba(25,23,19,.2)) saturate(1); transform: scaleX(1) scale(1); }
 .pack-reveal-hint { position: absolute; z-index: 4; right: 24px; top: 24px; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; padding: 12px 14px; border: 1px solid currentColor; background: rgba(247,244,237,.78); backdrop-filter: blur(10px); }
 .pack-reveal-hint > span { font-size: 9px; font-weight: 700; letter-spacing: .14em; }
 .pack-reveal-hint small { font-size: 8px; letter-spacing: .12em; opacity: .62; }
@@ -675,8 +670,8 @@ body { background: #f2f0eb; }
 .blend-story-grid > * { min-height: 640px; border-radius: 12px; overflow: hidden; }
 .blend-ingredients img,
 .blend-place img,
-.blend-ritual img,
-.blend-unboxed img { height: 100%; object-fit: cover; }
+.blend-ritual img { height: 100%; object-fit: cover; }
+.blend-unboxed img { height: 100%; padding: 3%; object-fit: contain; }
 .blend-story-card { display: flex; flex-direction: column; justify-content: center; padding: 6vw; background: #e4e1da; }
 .blend-story-card h3 { margin: 24px 0; font-size: clamp(42px,5vw,70px); font-weight: 400; line-height: .95; letter-spacing: -.065em; text-transform: uppercase; }
 .blend-story-card > p:not(.eyebrow) { color: var(--muted); }
@@ -685,7 +680,9 @@ body { background: #f2f0eb; }
 .blend-story-card dt { font-size: 9px; font-weight: 700; letter-spacing: .12em; }
 .blend-story-card dd { color: var(--muted); font-size: 12px; }
 .blend-ritual,
+.blend-ritual,
 .blend-unboxed { position: relative; min-height: min(76vw,940px); }
+.blend-unboxed { background: var(--tone-bg,#a8afb0); }
 .blend-ritual figcaption,
 .blend-unboxed figcaption { position: absolute; right: 18px; bottom: 18px; left: 18px; display: flex; justify-content: space-between; align-items: center; gap: 18px; padding: 15px 17px; color: #f7f4ec; background: rgba(22,20,17,.42); backdrop-filter: blur(11px); border-radius: 6px; }
 .blend-ritual figcaption span,
@@ -731,7 +728,8 @@ body { background: #f2f0eb; }
   .shop-intro > div { grid-template-columns: 1fr; }
   .product-detail-redesign { grid-template-columns: 1fr; }
   .product-pack-stage { min-height: 90vw; }
-  .pack-door-set { height: 80vw; }
+  .pack-closed-view { height: 80vw; }
+  .pack-open-view { height: 86vw; }
   .product-detail-redesign .product-info { position: static; min-height: 0; }
   .blend-story-heading { grid-template-columns: 1fr; }
 }
@@ -786,7 +784,8 @@ body { background: #f2f0eb; }
   .ingredient-board-label h2 { font-size: 12vw; }
 
   .product-pack-stage { min-height: 110vw; }
-  .pack-door-set { width: 68%; height: 98vw; }
+  .pack-closed-view { width: 68%; height: 98vw; }
+  .pack-open-view { width: 96%; height: 104vw; }
   .pack-reveal-hint { top: 14px; right: 14px; }
   .pack-gallery-controls { right: 10px; left: 10px; }
   .pack-gallery-controls button { width: 40px; height: 40px; }
