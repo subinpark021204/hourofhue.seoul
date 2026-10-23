@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HUE 휴 | 서울의 한 시간을 우려내다</title>
+<meta name="description" content="서울의 장소와 시간을 맛으로 옮긴 3분 티백 블렌디드 티.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="HUE 휴 | 서울의 한 시간을 우려내다">
+<meta property="og:description" content="서울의 장소와 시간을 맛으로 옮긴 3분 티백 블렌디드 티.">
+<meta property="og:image" content="https://YOUR-GITHUB-ID.github.io/assets/og.png">
+<meta property="og:url" content="https://YOUR-GITHUB-ID.github.io/">
+<link rel="canonical" href="https://YOUR-GITHUB-ID.github.io/">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Oswald:wght@500;700&display=swap"><link rel="stylesheet" href="assets/base.css">
+<style>
+:root{--ink:#1a1a1a;--sub:#6b6b6b;--line:#d9d9d9;--foot:#EDEDED}
+body{font-family:"Nanum Gothic Coding",monospace;color:var(--ink);background:#fff;font-size:14px;line-height:1.6}
+.cd{font-family:Oswald,"Pretendard Variable",sans-serif;text-transform:uppercase;letter-spacing:.02em}
+.u{text-decoration:underline;text-underline-offset:3px}
+.notice{background:#3a3a3a;color:#fff;text-align:center;font-size:14px;padding:9px 16px}
+/* 헤더 */
+.hd{display:grid;grid-template-columns:auto 220px 1fr auto;align-items:stretch;border-bottom:1px solid var(--line);height:74px}
+.hd>*{display:flex;align-items:center;padding:0 22px;border-right:1px solid var(--line)}
+.hd>*:last-child{border:0}
+.wm{flex-direction:column;align-items:flex-start;justify-content:center}
+.wm b{font-family:Oswald,sans-serif;font-size:30px;line-height:1;letter-spacing:.04em}
+.wm small{font-size:9px;letter-spacing:2px;color:var(--sub)}
+.hd .q{color:#999;gap:8px}
+.hd nav{gap:22px;font-size:14px;white-space:nowrap;overflow:hidden}
+.hd .r{gap:18px;font-size:13px}
+/* 히어로 */
+.hero{position:relative;height:calc(100vh - 110px);min-height:640px;background:#222;overflow:hidden}
+.hero .bg{position:absolute;inset:0}.hero .bg .ph{background:#2d2b29;color:#bbb}
+.hero h1{position:absolute;left:40px;top:44px;color:#fff;font-size:20px;font-weight:400;margin:0;line-height:1.5}
+.hero h1 b{display:block;font-family:Oswald,sans-serif;font-size:13px;letter-spacing:3px;font-weight:500;opacity:.8}
+.cats{position:absolute;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(4,1fr);color:#fff}
+.cats a{padding:26px 30px 30px;border-top:1px solid rgba(255,255,255,.35);border-right:1px solid rgba(255,255,255,.2);opacity:.55;background:linear-gradient(transparent,rgba(0,0,0,.45))}
+.cats a:first-child{opacity:1}
+.cats .cd{display:block;font-size:30px;font-weight:700;line-height:1.1}
+.cats .ko{display:block;font-size:15px;margin:6px 0 4px}
+.cats .ds{display:block;font-size:12px;opacity:.85;min-height:38px}
+/* 신청 한 칸 */
+.apply{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
+.apply>div{padding:56px 40px}
+.apply>div:first-child{border-right:1px solid var(--line)}
+.apply h2{font-size:34px;margin:0 0 12px;line-height:1.1}
+.apply p{color:var(--sub);margin:0 0 6px}
+.spec{width:100%;border-collapse:collapse;margin-top:24px}
+.spec td{border-top:1px solid var(--line);padding:9px 0}.spec td:first-child{font-family:Oswald,sans-serif;width:180px}
+.field{display:block;margin-bottom:14px}
+.field span{display:block;font-size:12px;color:var(--sub);margin-bottom:4px}
+.field input,.field select{width:100%;height:44px;border:1px solid var(--ink);border-radius:0;padding:0 12px;font:inherit;background:#fff}
+.apply .safe-note{margin:14px 0}
+.submit{width:100%;height:48px;border:0;background:var(--ink);color:#fff;font-family:Oswald,sans-serif;letter-spacing:2px;font-size:15px;text-transform:uppercase}
+/* 푸터 */
+.ft{background:var(--foot);padding:40px 40px 30px;font-size:13px}
+.ft .cols{display:grid;grid-template-columns:repeat(4,1fr) 1.2fr;gap:20px}
+.ft b{display:block;margin-bottom:12px;font-family:Oswald,sans-serif;font-weight:500;text-transform:uppercase}
+.ft a{display:block;margin-bottom:6px;color:#444}
+.ft .bot{margin-top:30px;border-top:1px solid var(--line);padding-top:16px;color:var(--sub);font-size:12px}
+@media (max-width:1100px){.hd nav{display:none}.hd{grid-template-columns:auto 1fr auto}}
+@media (max-width:860px){
+  .hd .q{display:none}.hd{grid-template-columns:1fr auto;height:62px}
+  .hero{height:auto;min-height:0;padding-top:120px}.hero .bg{height:340px}.cats{position:relative;grid-template-columns:1fr 1fr;margin-top:240px;background:#222}
+  .cats .cd{font-size:22px}.apply{grid-template-columns:1fr}.apply>div{padding:36px 20px}.apply>div:first-child{border:0}
+  .ft{padding:30px 20px}.ft .cols{grid-template-columns:1fr 1fr}
+}
+</style>
+<!-- GA4 (Day 34에 여기에 붙이기) -->
+<!-- Meta Pixel (Day 35에 여기에 붙이기) -->
+<!-- Microsoft Clarity (Day 38에 여기에 붙이기) -->
+<!-- Schema JSON-LD (Day 29) -->
+</head>
+<body>
+<p class="notice">서울의 다섯 시간, 첫 블렌드 출시 알림을 받아 보세요. <a class="u" href="#apply">자세히 보기</a></p>
+<header class="hd">
+  <a class="wm" href="./"><b>HUE 休</b><small>SEOUL — BLENDED TEA</small></a>
+  <span class="q">⌕ 검색</span>
+  <nav><a href="#apply">Bukchon 8:00</a><a href="#apply">Seochon 11:00</a><a href="#apply">Seongsu 4:00</a><a href="#apply">Yeonnam 6:42</a><a href="#apply">기프트</a><a href="#apply">HUE 소개</a></nav>
+  <div class="r"><a href="#apply" id="cta-top">신청</a><a href="#apply">장바구니 (0)</a></div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="bg"><div class="ph "><span><span class="todo">히어로: 티 패키지 이미지</span> (화면 꽉 찬 어두운 다실·블렌딩 작업대 사진/영상)</span></div></div>
+  <h1><b>SEOUL BLENDED TEA</b>서울의 한 시간을<br>우려내다.</h1>
+  <div class="cats">
+    <a href="#apply" id="cta-main"><span class="cd">Bukchon 8:00</span><span class="ko">커피 대신, 오후 4시 한 잔</span><span class="ds"><span class="todo">맛 설명</span></span><span class="u">자세히 보기</span></a>
+    <a href="#apply" ><span class="cd">Seochon 11:00</span><span class="ko">핸드크림 대신, 서울의 네 시간을</span><span class="ds"><span class="todo">맛 설명</span></span><span class="u">자세히 보기</span></a>
+    <a href="#apply" ><span class="cd">Seongsu 4:00</span><span class="ko">오후 4시</span><span class="ds"><span class="todo">맛 설명</span></span><span class="u">자세히 보기</span></a>
+    <a href="#apply" ><span class="cd">Yeonnam 6:42</span><span class="ko">시간으로 고르는 차</span><span class="ds"><span class="todo">맛 설명</span></span><span class="u">자세히 보기</span></a>
+  </div>
+</section>
+
+<section class="apply" id="apply">
+  <div>
+    <h2 class="cd">서울의 다섯 시간</h2>
+    <p>오후 4시, 또 커피 말고 다른 한 잔. 북촌의 아침부터 해방촌의 자정까지, 서울의 시간을 3분 티백에 담았습니다.</p>
+    <table class="spec"><tr><td>Bukchon 8:00</td><td><span class="todo">맛 설명</span></td></tr><tr><td>Seochon 11:00</td><td><span class="todo">맛 설명</span></td></tr><tr><td>Seongsu 4:00</td><td><span class="todo">맛 설명</span></td></tr><tr><td>Yeonnam 6:42</td><td><span class="todo">맛 설명</span></td></tr><tr><td>Haebangchon 0:00</td><td><span class="todo">맛 설명</span></td></tr></table>
+  </div>
+  <div>
+    <h2 class="cd" style="font-size:24px"><span class="todo">신청 제목</span></h2>
+    <p><span class="todo">목적이 &#34;기타&#34;라서 전환 행동 확정 필요</span></p>
+    <form id="lead-form" action="result.html" method="get" autocomplete="off" novalidate style="margin-top:20px">
+      <label class="field"><span>이름</span><input id="f-name" type="text" required maxlength="20" placeholder="홍길동"></label>
+<label class="field"><span>이메일</span><input id="f-contact" type="email" required placeholder="example@email.com"></label>
+
+      <div class="safe-note"><span aria-hidden="true">🔒</span><div>입력한 정보는 <b>어디에도 전송·저장되지 않고</b> 완료 즉시 지워집니다. <button type="button" data-privacy-open>자세히 보기</button></div></div>
+      <button class="submit" type="submit" id="cta-submit">첫 블렌드 알림 받기</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="ft">
+  <div class="cols">
+    <div><b>About HUE</b><a href="#apply">브랜드 이야기</a><a href="#apply">서울의 시간</a></div>
+    <div><b>고객 서비스</b><a href="#apply">첫 블렌드 알림 받기</a><a href="#" data-privacy-open>개인정보 처리 안내</a></div>
+    <div><b>라인업</b><a href="#apply">Bukchon 8:00</a><a href="#apply">Seochon 11:00</a><a href="#apply">Seongsu 4:00</a><a href="#apply">Yeonnam 6:42</a><a href="#apply">Haebangchon 0:00</a></div>
+    <div><b>스토어</b><a href="#apply">팝업 스토어 소식</a></div>
+    <div><b>Follow</b><a href="#">Instagram</a></div>
+  </div>
+  <p class="bot">이 페이지는 수업 실습용 페이지입니다. 실제 판매·결제는 이루어지지 않으며, 표기된 수치·후기는 예시입니다.</p>
+</footer>
+<div class="modal" id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-title" aria-hidden="true">
+  <div class="modal-box">
+    <span class="badge">개인정보 미수집 · 즉시 파기</span>
+    <h2 id="privacy-title">개인정보 처리 안내</h2>
+    <ol>
+      <li><strong>입력하신 정보는 절대 저장하지 않습니다.</strong> 서버, 데이터베이스, 스프레드시트, 이메일, 외부 서비스 어디로도 전송되지 않습니다.</li>
+      <li>입력값은 이 브라우저 화면에만 잠시 머물며, 완료 버튼을 누르는 <strong>즉시 화면에서 지워집니다.</strong> 쿠키나 브라우저 저장소에도 남기지 않습니다.</li>
+      <li>페이지 제작자와 강사를 포함한 <strong>누구도 입력값을 볼 수 없습니다.</strong></li>
+    </ol>
+    <label><input type="checkbox" id="privacy-agree"> 위 내용을 확인했으며, 입력값이 저장되지 않고 즉시 파기된다는 점에 동의합니다.</label>
+    <div class="modal-actions">
+      <button type="button" class="cancel" id="privacy-cancel">닫기</button>
+      <button type="button" class="ok" id="privacy-ok" disabled>확인했습니다</button>
+    </div>
+  </div>
+</div><script src="assets/privacy.js"></script>
+</body>
+</html>
