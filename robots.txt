@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /result.html
 
 Sitemap: https://hourofhue.seoul/sitemap.xml
