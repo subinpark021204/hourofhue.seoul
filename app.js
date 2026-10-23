@@ -13,6 +13,8 @@ const HUE_PRODUCTS = {
     quote: "“아침의 골목은 아직 조용하고,\n찻잔의 향이 먼저 하루를 엽니다.”",
     pack: "assets/images/pack-bukchon.png",
     detail: "assets/images/detail-bukchon.jpg",
+    ritual: "assets/images/ritual-bukchon.jpg",
+    open: "assets/images/open-bukchon.jpg",
     place: "assets/images/place-bukchon.jpg",
     bg: "#a8afb0",
     ink: "#17272e"
@@ -31,6 +33,8 @@ const HUE_PRODUCTS = {
     quote: "“느리게 밝아진 오전은,\n맑고 부드러운 맛으로 남습니다.”",
     pack: "assets/images/pack-seochon.png",
     detail: "assets/images/detail-seochon.jpg",
+    ritual: "assets/images/ritual-seochon.jpg",
+    open: "assets/images/open-seochon.jpg",
     place: "assets/images/place-seochon.jpg",
     bg: "#ded9c8",
     ink: "#474638"
@@ -49,6 +53,8 @@ const HUE_PRODUCTS = {
     quote: "“익숙한 오후 사이,\n조금 다른 향으로 속도를 바꿉니다.”",
     pack: "assets/images/pack-seongsu.png",
     detail: "assets/images/detail-seongsu.jpg",
+    ritual: "assets/images/ritual-seongsu.jpg",
+    open: "assets/images/open-seongsu.jpg",
     place: "assets/images/place-seongsu.jpg",
     bg: "#8a4939",
     ink: "#f4e7d4"
@@ -67,6 +73,8 @@ const HUE_PRODUCTS = {
     quote: "“해가 지기 직전의 색은,\n잠시 머물다 향으로 남습니다.”",
     pack: "assets/images/pack-yeonnam.png",
     detail: "assets/images/detail-yeonnam.jpg",
+    ritual: "assets/images/ritual-yeonnam.jpg",
+    open: "assets/images/open-yeonnam.jpg",
     place: "assets/images/place-yeonnam.jpg",
     bg: "#d18e78",
     ink: "#472d28"
@@ -85,6 +93,8 @@ const HUE_PRODUCTS = {
     quote: "“자정의 푸른 고요 속에서,\n오늘을 천천히 내려놓습니다.”",
     pack: "assets/images/pack-haebangchon.png",
     detail: "assets/images/detail-haebangchon.jpg",
+    ritual: "assets/images/ritual-haebangchon.jpg",
+    open: "assets/images/open-haebangchon.jpg",
     place: "assets/images/place-haebangchon.jpg",
     bg: "#22283b",
     ink: "#eee9dc"
@@ -138,10 +148,14 @@ function initHueCursor() {
   const cursor = document.createElement("div");
   cursor.className = "hue-cursor";
   cursor.setAttribute("aria-hidden", "true");
-  cursor.innerHTML = "<span>HUE</span>";
+  cursor.innerHTML = `
+    <svg viewBox="0 0 96 96" role="presentation">
+      <path class="knot-loop" d="M48 47c-9 0-16-3-21-9-6-8-1-18 8-18 8 0 13 7 13 16 0-9 5-16 13-16 9 0 14 10 8 18-5 6-12 9-21 9 9 0 16 3 21 9 6 8 1 18-8 18-8 0-13-7-13-16 0 9-5 16-13 16-9 0-14-10-8-18 5-6 12-9 21-9Z"/>
+      <path class="knot-weave" d="M35 37 59 61M59 37 35 61M39 48h18M48 39v18"/>
+      <circle cx="48" cy="48" r="5"/>
+    </svg>`;
   document.body.append(cursor);
 
-  const label = cursor.querySelector("span");
   let x = -100;
   let y = -100;
   let frame = 0;
@@ -161,8 +175,6 @@ function initHueCursor() {
 
   document.addEventListener("pointerover", (event) => {
     const target = event.target.closest("[data-cursor], a, button, summary");
-    const text = target?.dataset.cursor || (target ? "OPEN" : "HUE");
-    label.textContent = text;
     cursor.classList.toggle("active", Boolean(target));
   });
   document.addEventListener("pointerout", (event) => {
@@ -272,12 +284,21 @@ function initProductPage() {
   const images = [
     ["[data-product-pack]", product.pack, `${product.locationKo} ${product.name} 패키지`],
     ["[data-product-detail]", product.detail, `${product.name} 블렌드의 재료와 티백`],
+    ["[data-product-ritual]", product.ritual, `${product.name}의 재료, 우린 차와 전통 문양 티백`],
+    ["[data-product-open]", product.open, `${product.locationKo} ${product.name} 패키지를 펼친 모습`],
     ["[data-product-place]", product.place, `${product.locationKo}의 시간과 ${product.name}`]
   ];
   images.forEach(([selector, src, alt]) => {
-    const image = document.querySelector(selector);
-    if (image) { image.src = src; image.alt = alt; }
+    document.querySelectorAll(selector).forEach((image) => {
+      image.src = src;
+      image.alt = alt;
+    });
   });
+
+  const revealButton = document.querySelector("[data-package-reveal]");
+  if (revealButton) {
+    revealButton.setAttribute("aria-label", `${product.locationKo} ${product.name} 패키지 펼쳐보기`);
+  }
 
   const related = document.querySelector("[data-related-products]");
   if (related) {
@@ -293,8 +314,23 @@ function initProductPage() {
   }
 }
 
+function initPackageReveal() {
+  const button = document.querySelector("[data-package-reveal]");
+  if (!button) return;
+
+  const action = button.querySelector("[data-pack-action]");
+  button.addEventListener("click", () => {
+    const open = !button.classList.contains("is-open");
+    button.classList.toggle("is-open", open);
+    button.setAttribute("aria-expanded", String(open));
+    button.setAttribute("aria-label", open ? "펼친 패키지 닫기" : "패키지 펼쳐보기");
+    if (action) action.textContent = open ? "CLICK TO CLOSE" : "CLICK TO UNFOLD";
+  });
+}
+
 initHeader();
 initReveal();
 initHueCursor();
 initPrivacyForm();
 initProductPage();
+initPackageReveal();

@@ -25,9 +25,13 @@
     <nav class="breadcrumb" aria-label="현재 위치"><a href="index.html">HOME</a><span>/</span><a href="shop.html">SHOP</a><span>/</span><strong data-product-location>BUKCHON 8:00</strong></nav>
 
     <section class="product-detail product-detail-redesign">
-      <figure class="product-pack-stage" data-product-tone data-cursor="HUE">
+      <figure class="product-pack-stage" data-product-tone>
         <span class="pack-stage-number">COLLECTION 01</span>
-        <img data-product-pack src="assets/images/pack-bukchon.png" alt="HUE Bukchon 8:00 패키지">
+        <button class="pack-reveal-button" type="button" data-package-reveal data-cursor="UNFOLD" aria-expanded="false" aria-label="HUE Bukchon 8:00 패키지 펼쳐보기">
+          <img class="pack-closed-view" data-product-pack src="assets/images/pack-bukchon.png" alt="HUE Bukchon 8:00 닫힌 패키지">
+          <img class="pack-open-view" data-product-open src="assets/images/open-bukchon.jpg" alt="HUE Bukchon 8:00 펼친 패키지">
+          <span class="pack-reveal-hint"><span data-pack-action>CLICK TO UNFOLD</span><small>PACKAGE STORY</small></span>
+        </button>
         <figcaption data-product-location>BUKCHON 8:00</figcaption>
       </figure>
 
@@ -70,6 +74,14 @@
           <p data-product-notes>또렷한 블랙티, 시트러스 계열의 베르가못, 푸른 콘플라워가 만드는 단정한 균형.</p>
           <dl><div><dt>BLEND</dt><dd data-product-blend>Black tea blend</dd></div><div><dt>INGREDIENTS</dt><dd data-product-ingredients>블랙티, 베르가못 필, 콘플라워</dd></div></dl>
         </div>
+        <figure class="blend-ritual reveal" data-cursor="HUE">
+          <img data-product-ritual src="assets/images/ritual-bukchon.jpg" alt="Bukchon Earl Grey의 재료, 우린 차와 전통 문양 티백">
+          <figcaption><span>FROM LEAF TO CUP</span><strong data-product-location>BUKCHON 8:00</strong></figcaption>
+        </figure>
+        <figure class="blend-unboxed reveal" data-cursor="HUE">
+          <img data-product-open src="assets/images/open-bukchon.jpg" alt="Bukchon Earl Grey 패키지를 펼친 모습">
+          <figcaption><span>THE PACKAGE, UNFOLDED</span><strong data-product-name>EARL GREY</strong></figcaption>
+        </figure>
         <figure class="blend-place reveal" data-cursor="SCROLL"><img data-product-place src="assets/images/place-bukchon.jpg" alt="북촌의 아침과 HUE Earl Grey"><figcaption data-product-location>BUKCHON 8:00</figcaption></figure>
         <div class="blend-hour-card reveal" data-product-tone>
           <p class="eyebrow">THE HOUR</p>
