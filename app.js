@@ -15,6 +15,7 @@ const HUE_PRODUCTS = {
     detail: "assets/images/detail-bukchon.jpg",
     ritual: "assets/images/ritual-bukchon.jpg",
     open: "assets/images/open-bukchon.webp",
+    packRatio: "962 / 1634",
     place: "assets/images/place-bukchon.jpg",
     bg: "#a8afb0",
     ink: "#17272e"
@@ -35,6 +36,7 @@ const HUE_PRODUCTS = {
     detail: "assets/images/detail-seochon.jpg",
     ritual: "assets/images/ritual-seochon.jpg",
     open: "assets/images/open-seochon.webp",
+    packRatio: "962 / 1634",
     place: "assets/images/place-seochon.jpg",
     bg: "#ded9c8",
     ink: "#474638"
@@ -55,6 +57,7 @@ const HUE_PRODUCTS = {
     detail: "assets/images/detail-seongsu.jpg",
     ritual: "assets/images/ritual-seongsu.jpg",
     open: "assets/images/open-seongsu.webp",
+    packRatio: "962 / 1634",
     place: "assets/images/place-seongsu.jpg",
     bg: "#8a4939",
     ink: "#f4e7d4"
@@ -75,6 +78,7 @@ const HUE_PRODUCTS = {
     detail: "assets/images/detail-yeonnam.jpg",
     ritual: "assets/images/ritual-yeonnam.jpg",
     open: "assets/images/open-yeonnam.webp",
+    packRatio: "993 / 1584",
     place: "assets/images/place-yeonnam.jpg",
     bg: "#d18e78",
     ink: "#472d28"
@@ -95,6 +99,7 @@ const HUE_PRODUCTS = {
     detail: "assets/images/detail-haebangchon.jpg",
     ritual: "assets/images/ritual-haebangchon.jpg",
     open: "assets/images/open-haebangchon.webp",
+    packRatio: "1067 / 1475",
     place: "assets/images/place-haebangchon.jpg",
     bg: "#22283b",
     ink: "#eee9dc"
@@ -270,6 +275,7 @@ function initProductPage() {
   document.querySelectorAll("[data-product-tone]").forEach((element) => {
     element.style.setProperty("--tone-bg", product.bg);
     element.style.setProperty("--tone-ink", product.ink);
+    element.style.setProperty("--pack-closed-ratio", product.packRatio);
   });
 
   const quote = document.querySelector("[data-product-quote]");
