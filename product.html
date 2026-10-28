@@ -7,18 +7,18 @@
   <title>HUE Collection | 서울의 다섯 시간</title>
   <meta name="description" content="서울의 시간과 장소를 담은 HUE 블렌디드 티 컬렉션.">
   <link rel="icon" href="assets/images/hue-logo-dark.png">
-  <link rel="stylesheet" href="styles.css?v=20261028-final">
-  <script src="app.js?v=20261028-final" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261028-restore">
+  <script src="app.js?v=20261028-restore" defer></script>
 </head>
 <body class="product-page" data-product-page>
   <a class="skip-link" href="#main">본문으로 바로가기</a>
-  <div class="announcement"><p>첫 출시 알림 신청하고 15% 프로모션 코드를 받아보세요.</p><a href="index.html#notify" data-apply-link>코드 받기 <span aria-hidden="true">↗</span></a></div>
+  <div class="announcement"><p>첫 블렌드 알림 신청하고 15% 프로모션 코드를 받아보세요.</p><a href="#launch-offer" data-offer-open>코드 받기 <span aria-hidden="true">↗</span></a></div>
 
   <header class="site-header" data-header>
     <a class="brand" href="index.html" aria-label="HUE 홈"><img src="assets/images/hue-logo-dark.png" alt="HUE"><span>SEOUL · BLENDED TEA</span></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span class="sr-only">메뉴 열기</span></button>
     <nav class="site-nav" id="site-nav" aria-label="주요 메뉴"><a class="active" href="shop.html">SHOP</a><a href="index.html#about">ABOUT HUE</a><a href="index.html#collection">THE HOURS</a><a href="index.html#ritual">RITUAL</a></nav>
-    <div class="header-tools"><a href="index.html#notify" data-apply-link>15% 코드 받기</a><span aria-hidden="true">KR</span></div>
+    <div class="header-tools"><a href="#launch-offer" data-offer-open>15% 코드 받기</a><span aria-hidden="true">KR</span></div>
   </header>
 
   <main id="main">
@@ -51,7 +51,7 @@
         <p class="product-description" data-product-description>블랙티 위로 베르가못의 맑은 향과 콘플라워의 푸른 잔향이 이어집니다.</p>
 
         <div class="product-status"><span>COLLECTION 01</span><strong>ONLINE RELEASE SOON</strong></div>
-        <a class="button button-dark product-cta" href="index.html#notify" data-apply-link data-cursor="JOIN">알림 신청하고 15% 코드 받기</a>
+        <a class="button button-dark product-cta" href="#launch-offer" data-offer-open data-cursor="JOIN">첫 블렌드 알림 신청하고 15% 코드 받기</a>
         <p class="microcopy">첫 출시 알림을 신청하면 프로모션 코드를 확인할 수 있어요.</p>
 
         <dl class="product-specs">
@@ -143,10 +143,28 @@
     <div class="footer-wordmark">Hue</div>
     <div class="footer-links">
       <div><strong>ABOUT HUE</strong><a href="index.html#about">브랜드 이야기</a></div>
-      <div><strong>SHOP</strong><a href="shop.html">전체 블렌드</a></div>
-      <div><strong>FIRST BLEND</strong><a href="index.html#notify" data-apply-link>알림 신청 · 15% 코드</a></div>
+      <div><strong>SHOP</strong><a href="shop.html">전체 블렌드</a><a href="product.html?blend=bukchon">Bukchon 8:00</a><a href="product.html?blend=seochon">Seochon 11:00</a><a href="product.html?blend=seongsu">Seongsu 4:00</a><a href="product.html?blend=yeonnam">Yeonnam 6:42</a><a href="product.html?blend=haebangchon">Haebangchon 0:00</a></div>
+      <div><strong>FIRST BLEND</strong><a href="#launch-offer" data-offer-open>알림 신청 · 15% 코드</a></div>
+      <div><strong>FOLLOW</strong><a class="instagram-link" href="https://www.instagram.com/hourofhue.seoul/" target="_blank" rel="noreferrer" aria-label="HUE Instagram 새 창에서 열기"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.7" r="1" class="is-filled"/></svg><span>hourofhue.seoul</span></a></div>
     </div>
-    <p class="footer-note">이 페이지는 수업 실습용 페이지입니다. 실제 판매·결제는 이루어지지 않습니다.</p>
+    <p class="footer-note">HUE는 서울의 시간과 차의 감각을 탐구하는 브랜드 콘셉트 프로젝트입니다. 현재 정식 판매·결제는 진행되지 않습니다.</p>
   </footer>
+
+  <div class="offer-modal" id="launch-offer" role="dialog" aria-modal="true" aria-labelledby="offer-title" aria-hidden="true">
+    <button class="offer-modal-backdrop" type="button" data-offer-close aria-label="15% 코드 신청 창 닫기"></button>
+    <div class="offer-modal-box" role="document">
+      <button class="offer-modal-close" type="button" data-offer-close aria-label="15% 코드 신청 창 닫기">×</button>
+      <p class="eyebrow">FIRST BLEND BENEFIT</p>
+      <div class="promo-badge"><strong>15%</strong><span>WELCOME<br>CODE</span></div>
+      <h2 id="offer-title">첫 블렌드 알림 신청하고<br>15% 코드 받기</h2>
+      <p>이름과 이메일을 남기면 첫 출시 소식과 함께 사용할 수 있는 프로모션 코드를 바로 확인할 수 있어요.</p>
+      <form id="offer-form" autocomplete="off" novalidate>
+        <label class="field"><span>이름</span><input name="name" type="text" required maxlength="20" placeholder="홍길동"></label>
+        <label class="field"><span>이메일</span><input name="email" type="email" required placeholder="example@email.com"></label>
+        <div class="safe-note"><span aria-hidden="true">↳</span><p>입력한 정보는 어디에도 전송·저장되지 않고 완료 즉시 지워집니다.</p></div>
+        <button class="button button-dark submit" type="submit">15% 프로모션 코드 받기</button>
+      </form>
+    </div>
+  </div>
 </body>
 </html>

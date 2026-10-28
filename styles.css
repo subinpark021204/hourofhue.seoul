@@ -390,7 +390,7 @@ ol { margin: 0; padding: 0; }
 .related-card h3 { font-size: 13px; font-weight: 500; }
 .related-card p { margin-top: 4px; color: var(--muted); font-size: 9px; letter-spacing: .1em; }
 .compact-footer .footer-brand { padding-bottom: 45px; }
-.compact-footer .footer-links { grid-template-columns: repeat(3, 1fr); }
+.compact-footer .footer-links { grid-template-columns: repeat(4, 1fr); }
 
 /* Completion page */
 .result-page { min-height: 100vh; background: #d8d2c6; }
@@ -529,7 +529,7 @@ body { background: #f2f0eb; }
 .map-meta { position: absolute; z-index: 5; top: 22px; right: 24px; left: 24px; display: flex; justify-content: space-between; gap: 20px; font-size: 8px; letter-spacing: .16em; }
 .seoul-map,
 .map-marker-layer { position: absolute; inset: 60px 18px 48px; width: calc(100% - 36px); height: calc(100% - 108px); }
-.seoul-map { object-fit: contain; }
+.seoul-map { object-fit: contain; filter: saturate(.82) contrast(.98); }
 .map-marker-layer { z-index: 4; }
 .map-caption { position: absolute; z-index: 5; right: 22px; bottom: 18px; font-size: 8px; letter-spacing: .16em; }
 .map-marker {
@@ -538,16 +538,16 @@ body { background: #f2f0eb; }
   z-index: 1;
   left: var(--x);
   top: var(--y);
-  width: 52px;
+  width: 48px;
   aspect-ratio: 1;
   display: block;
   transform: translate(-50%,-50%) rotate(var(--rotation));
   transition: transform .4s var(--ease), filter .4s ease;
 }
 .map-marker img {
+  width: 100%;
   height: 100%;
-  object-fit: cover;
-  clip-path: polygon(10% 0,90% 0,100% 10%,100% 90%,90% 100%,10% 100%,0 90%,0 10%);
+  object-fit: contain;
   filter: drop-shadow(0 8px 7px rgba(46,40,32,.24));
 }
 .map-marker:hover,
@@ -596,7 +596,7 @@ body { background: #f2f0eb; }
 .packaging-intro { display: grid; grid-template-columns: 1fr 3fr; gap: 5vw; }
 .packaging-intro > div { display: flex; justify-content: space-between; align-items: flex-end; gap: 50px; }
 .packaging-intro > div > p { max-width: 430px; color: var(--muted); word-break: keep-all; }
-.pack-chapters { padding: 0 10px 10px; }
+.pack-chapters { position: relative; isolation: isolate; padding: 0 10px 10px; }
 .pack-chapter {
   position: sticky;
   top: calc(var(--header-h) + 10px);
@@ -610,6 +610,11 @@ body { background: #f2f0eb; }
   overflow: hidden;
   box-shadow: 0 -1px 0 rgba(255,255,255,.25);
 }
+.pack-chapter:nth-child(1) { z-index: 1; }
+.pack-chapter:nth-child(2) { z-index: 2; }
+.pack-chapter:nth-child(3) { z-index: 3; }
+.pack-chapter:nth-child(4) { z-index: 4; }
+.pack-chapter:nth-child(5) { z-index: 5; }
 .pack-chapter-copy { display: flex; flex-direction: column; justify-content: center; padding: 6vw; }
 .pack-chapter-copy > span { font-size: 9px; letter-spacing: .16em; }
 .pack-time { margin-top: 50px; font-size: clamp(60px,8vw,128px); line-height: .85; letter-spacing: -.075em; }
@@ -639,6 +644,9 @@ body { background: #f2f0eb; }
 .footer-links a:hover,
 .footer-links button:hover { color: #000; }
 .footer-note { border-top-color: rgba(23,23,20,.16); color: #77746d; }
+.instagram-link { display: flex !important; align-items: center; gap: 8px; }
+.instagram-link svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+.instagram-link svg .is-filled { fill: currentColor; stroke: none; }
 
 /* Shop: ingredient-first boards */
 .shop-intro { display: grid; grid-template-columns: 200px minmax(0,1fr); gap: 5vw; padding-bottom: 70px; }
@@ -654,9 +662,20 @@ body { background: #f2f0eb; }
 .ingredient-board-label span { color: var(--muted); font-size: 9px; letter-spacing: .15em; }
 .ingredient-board-label h2 { margin-top: 12px; font-size: clamp(36px,4vw,62px); font-weight: 400; line-height: .95; letter-spacing: -.06em; }
 .ingredient-board-label p { margin-top: 9px; font-size: 10px; letter-spacing: .14em; }
-.ingredient-board-label small { display: block; margin-top: 20px; color: var(--muted); }
+.ingredient-board-label small { display: block; margin-top: 20px; color: var(--muted); font-size: 11px; line-height: 1.5; }
 .shop-endnote { text-align: center; }
-.shop-endnote h2 { margin: 34px 0 48px; }
+.shop-endnote h2 { margin: 34px 0 48px; font-size: clamp(34px,4vw,64px); }
+
+/* Product launch offer */
+.offer-modal { position: fixed; inset: 0; z-index: 120; display: none; place-items: center; padding: 16px; }
+.offer-modal[aria-hidden="false"] { display: grid; }
+.offer-modal-backdrop { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: rgba(19,18,15,.74); backdrop-filter: blur(7px); }
+.offer-modal-box { position: relative; z-index: 1; width: min(680px,100%); max-height: calc(100svh - 32px); overflow: auto; padding: 58px 58px 48px; background: #f7f5f0; box-shadow: 0 30px 90px rgba(18,16,13,.28); }
+.offer-modal-close { position: absolute; top: 16px; right: 20px; padding: 0; border: 0; background: transparent; font-size: 30px; line-height: 1; }
+.offer-modal-box h2 { margin: 22px 0 14px; font-size: clamp(36px,5vw,64px); font-weight: 400; line-height: 1.02; letter-spacing: -.06em; word-break: keep-all; }
+.offer-modal-box > p:not(.eyebrow) { max-width: 540px; color: var(--muted); word-break: keep-all; }
+.offer-modal-box form { margin-top: 38px; }
+.offer-modal-box .promo-badge { margin-top: 26px; }
 
 /* Product: package first, then editorial story */
 .product-detail-redesign { grid-template-columns: minmax(0,1.55fr) minmax(400px,.75fr); align-items: start; }
@@ -805,7 +824,7 @@ body { background: #f2f0eb; }
   .map-meta { top: 18px; right: 16px; left: 16px; }
   .seoul-map,
   .map-marker-layer { inset: 62px 4px 42px; width: calc(100% - 8px); height: calc(100% - 104px); }
-  .map-marker { width: 42px; }
+  .map-marker { width: 40px; }
   .map-caption { display: none; }
   .brand-hero-copy { padding: 80px 22px; }
   .brand-hero-copy h1 { font-size: clamp(38px,10.5vw,54px); }
@@ -813,8 +832,8 @@ body { background: #f2f0eb; }
   .brand-note h2,
   .packaging-intro h2,
   .shop-callout h2,
-  .shop-endnote h2,
   .blend-story-heading h2 { font-size: clamp(40px,12vw,60px); }
+  .shop-endnote h2 { font-size: clamp(32px,8vw,44px); }
   .brand-note > div > p:last-child { margin: 34px 0 0; }
   .brand-values { padding: 6px; gap: 6px; }
   .brand-values-media { min-height: 110vw; }
@@ -823,7 +842,7 @@ body { background: #f2f0eb; }
   .shop-callout { align-items: flex-start; flex-direction: column; margin: 6px; padding: 80px 22px; }
   .packaging-intro { padding-bottom: 55px; }
   .pack-chapters { padding: 0 6px 6px; }
-  .pack-chapter { position: relative; top: auto; min-height: 100svh; grid-template-columns: 1fr; margin-bottom: 6px; border-radius: 9px; }
+  .pack-chapter { position: sticky; top: calc(var(--header-h) + 6px); min-height: calc(100svh - var(--header-h) - 12px); grid-template-columns: 1fr; margin-bottom: 6px; border-radius: 9px; }
   .pack-chapter-copy { min-height: 48svh; padding: 70px 24px 30px; }
   .pack-time { margin-top: 34px; font-size: 22vw; }
   .pack-chapter-visual { min-height: 52svh; }
@@ -832,12 +851,15 @@ body { background: #f2f0eb; }
   .apply { margin: 6px; border-radius: 9px; }
   .footer-wordmark { margin-top: 10px; font-size: 39vw; }
 
-  .shop-intro h1 { font-size: 19vw; }
+  .shop-intro h1 { font-size: clamp(52px,13.2vw,86px); line-height: .86; }
   .ingredient-boards { padding: 0 6px 6px; }
   .ingredient-board { margin-bottom: 6px; }
   .ingredient-board > a { min-height: 0; aspect-ratio: 16 / 9; border-radius: 9px; }
   .ingredient-board-label { left: 12px; right: 12px; bottom: 12px; min-width: 0; padding: 20px; }
-  .ingredient-board-label h2 { font-size: 12vw; }
+  .ingredient-board-label h2 { font-size: clamp(32px,9vw,46px); }
+  .ingredient-board-label small { margin-top: 14px; font-size: 9px; }
+  .compact-footer .footer-links { grid-template-columns: 1fr 1fr; }
+  .offer-modal-box { padding: 52px 22px 30px; }
 
   .product-pack-stage { min-height: 110vw; }
   .pack-closed-view,
@@ -866,4 +888,8 @@ body { background: #f2f0eb; }
   .review-form-actions { align-items: flex-start; flex-direction: column; }
   .review-form-actions .button { width: 100%; }
   .review-list { grid-column: auto; border-bottom: 0; }
+}
+
+@media (max-width: 520px) {
+  .compact-footer .footer-links { grid-template-columns: 1fr; }
 }

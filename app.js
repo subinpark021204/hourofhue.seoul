@@ -185,7 +185,7 @@ function initHueCursor() {
 }
 
 function initApplyNavigation() {
-  const target = document.querySelector("#notify");
+  const target = document.querySelector("#apply-form");
   if (!target) return;
 
   const scrollToApply = (smooth = true) => {
@@ -201,16 +201,62 @@ function initApplyNavigation() {
   document.querySelectorAll("[data-apply-link]").forEach((link) => {
     link.addEventListener("click", (event) => {
       const destination = new URL(link.href, window.location.href);
-      if (destination.pathname !== window.location.pathname || destination.hash !== "#notify") return;
+      if (destination.pathname !== window.location.pathname || destination.hash !== "#apply-form") return;
       event.preventDefault();
-      if (window.location.hash !== "#notify") history.pushState(null, "", "#notify");
+      if (window.location.hash !== "#apply-form") history.pushState(null, "", "#apply-form");
       settleOnApply();
     });
   });
 
-  if (window.location.hash === "#notify") {
+  if (window.location.hash === "#apply-form") {
     requestAnimationFrame(settleOnApply);
     window.addEventListener("load", settleOnApply, { once: true });
+  }
+}
+
+function initOfferModal() {
+  const modal = document.querySelector("#launch-offer");
+  if (!modal) return;
+
+  const form = modal.querySelector("#offer-form");
+  const openers = document.querySelectorAll("[data-offer-open]");
+  const closers = modal.querySelectorAll("[data-offer-close]");
+  let previousFocus = null;
+
+  const openModal = (event) => {
+    if (event) event.preventDefault();
+    previousFocus = document.activeElement;
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    requestAnimationFrame(() => modal.querySelector("input").focus());
+  };
+
+  const closeModal = () => {
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+    if (previousFocus) previousFocus.focus();
+  };
+
+  openers.forEach((opener) => opener.addEventListener("click", openModal));
+  closers.forEach((closer) => closer.addEventListener("click", closeModal));
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && modal.getAttribute("aria-hidden") === "false") closeModal();
+  });
+
+  if (form) {
+    const fields = [...form.querySelectorAll("input[required]")];
+    fields.forEach((field) => field.addEventListener("input", () => field.classList.remove("invalid")));
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const invalid = fields.filter((field) => !field.checkValidity());
+      fields.forEach((field) => field.classList.toggle("invalid", invalid.includes(field)));
+      if (invalid.length) {
+        invalid[0].focus();
+        return;
+      }
+      form.reset();
+      window.location.assign("result.html?offer=15");
+    });
   }
 }
 
@@ -490,6 +536,7 @@ initHeader();
 initReveal();
 initHueCursor();
 initApplyNavigation();
+initOfferModal();
 initPrivacyForm();
 initProductPage();
 initPackageReveal();
