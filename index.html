@@ -11,15 +11,15 @@
   <meta property="og:description" content="서울의 다섯 동네, 다섯 시간, 다섯 가지 차.">
   <meta property="og:image" content="assets/images/place-bukchon.jpg">
   <link rel="icon" href="assets/images/hue-logo-dark.png">
-  <link rel="stylesheet" href="styles.css?v=20261026-map-tags">
-  <script src="app.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261028-final">
+  <script src="app.js?v=20261028-final" defer></script>
 </head>
 <body class="home-page">
   <a class="skip-link" href="#main">본문으로 바로가기</a>
 
   <div class="announcement">
-    <p>서울의 다섯 시간, 첫 블렌드 출시 알림을 받아 보세요.</p>
-    <a href="#apply">자세히 보기 <span aria-hidden="true">↗</span></a>
+    <p>첫 출시 알림 신청하고 15% 프로모션 코드를 받아보세요.</p>
+    <a href="#notify" data-apply-link>코드 받기 <span aria-hidden="true">↗</span></a>
   </div>
 
   <header class="site-header" data-header>
@@ -34,7 +34,7 @@
       <a href="#collection">THE HOURS</a>
       <a href="#ritual">RITUAL</a>
     </nav>
-    <div class="header-tools"><a href="#apply">알림 신청</a><span aria-hidden="true">KR</span></div>
+    <div class="header-tools"><a href="#notify" data-apply-link>15% 코드 받기</a><span aria-hidden="true">KR</span></div>
   </header>
 
   <main id="main">
@@ -45,19 +45,19 @@
 
         <div class="map-marker-layer">
           <a class="map-marker marker-yeonnam" href="product.html?blend=yeonnam" data-cursor="SHOP" aria-label="연남 6시 42분 Rose Hibiscus 쇼핑하기">
-            <span class="map-paper map-paper-yeonnam" aria-hidden="true"><i></i><strong>Hue</strong><small>ROSE HIBISCUS</small><b>YEONNAM 6:42</b></span><span class="map-marker-name">YEONNAM · 18:42</span>
+            <img src="assets/images/tag-yeonnam.png" alt="" aria-hidden="true">
           </a>
           <a class="map-marker marker-seochon" href="product.html?blend=seochon" data-cursor="SHOP" aria-label="서촌 11시 Pear White Tea 쇼핑하기">
-            <span class="map-paper map-paper-seochon" aria-hidden="true"><i></i><strong>Hue</strong><small>PEAR WHITE TEA</small><b>SEOCHON 11:00</b></span><span class="map-marker-name">SEOCHON · 11:00</span>
+            <img src="assets/images/tag-seochon.png" alt="" aria-hidden="true">
           </a>
           <a class="map-marker marker-bukchon" href="product.html?blend=bukchon" data-cursor="SHOP" aria-label="북촌 8시 Earl Grey 쇼핑하기">
-            <span class="map-paper map-paper-bukchon" aria-hidden="true"><i></i><strong>Hue</strong><small>EARL GREY</small><b>BUKCHON 8:00</b></span><span class="map-marker-name">BUKCHON · 08:00</span>
+            <img src="assets/images/tag-bukchon.png" alt="" aria-hidden="true">
           </a>
           <a class="map-marker marker-seongsu" href="product.html?blend=seongsu" data-cursor="SHOP" aria-label="성수 4시 Roasted Cacao 쇼핑하기">
-            <span class="map-paper map-paper-seongsu" aria-hidden="true"><i></i><strong>Hue</strong><small>ROASTED CACAO</small><b>SEONGSU 4:00</b></span><span class="map-marker-name">SEONGSU · 16:00</span>
+            <img src="assets/images/tag-seongsu.png" alt="" aria-hidden="true">
           </a>
           <a class="map-marker marker-haebangchon" href="product.html?blend=haebangchon" data-cursor="SHOP" aria-label="해방촌 자정 Blue Hour Chamomile 쇼핑하기">
-            <span class="map-paper map-paper-haebangchon" aria-hidden="true"><i></i><strong>Hue</strong><small>BLUE HOUR<br>CHAMOMILE</small><b>HAEBANGCHON 0:00</b></span><span class="map-marker-name">HAEBANGCHON · 00:00</span>
+            <img src="assets/images/tag-haebangchon.png" alt="" aria-hidden="true">
           </a>
         </div>
         <p class="map-caption">FIVE PLACES · FIVE HOURS · FIVE BLENDS</p>
@@ -198,15 +198,16 @@
           <div><dt>Haebangchon 0:00</dt><dd>캐모마일 · 콘플라워 · 말린 사과</dd></div>
         </dl>
       </div>
-      <div class="apply-form-wrap reveal">
-        <p class="eyebrow">BE THE FIRST TO KNOW</p>
-        <h3>첫 블렌드 알림 받기</h3>
-        <p>HUE의 첫 출시와 팝업 소식을 가장 먼저 전해드릴게요.</p>
+      <div class="apply-form-wrap reveal" id="notify">
+        <p class="eyebrow">FIRST BLEND BENEFIT</p>
+        <div class="promo-badge"><strong>15%</strong><span>WELCOME<br>CODE</span></div>
+        <h3>알림 신청하고<br>15% 코드 받기</h3>
+        <p>HUE의 첫 출시와 팝업 소식을 가장 먼저 받고, 첫 구매에 사용할 수 있는 15% 프로모션 코드를 확인하세요.</p>
         <form id="lead-form" action="result.html" method="get" autocomplete="off" novalidate>
           <label class="field"><span>이름</span><input id="f-name" name="name" type="text" required maxlength="20" placeholder="홍길동"></label>
           <label class="field"><span>이메일</span><input id="f-contact" name="email" type="email" required placeholder="example@email.com"></label>
           <div class="safe-note"><span aria-hidden="true">↳</span><p>입력한 정보는 <strong>어디에도 전송·저장되지 않고</strong> 완료 즉시 지워집니다. <button type="button" data-privacy-open>자세히 보기</button></p></div>
-          <button class="button button-dark submit" type="submit">첫 블렌드 알림 받기</button>
+          <button class="button button-dark submit" type="submit">알림 신청하고 15% 코드 받기</button>
         </form>
       </div>
     </section>
@@ -217,7 +218,7 @@
     <div class="footer-links">
       <div><strong>ABOUT HUE</strong><a href="#about">브랜드 이야기</a><a href="#collection">서울의 시간</a></div>
       <div><strong>SHOP</strong><a href="shop.html">전체 블렌드</a><a href="product.html?blend=bukchon">Bukchon 8:00</a></div>
-      <div><strong>CUSTOMER CARE</strong><a href="#apply">첫 블렌드 알림</a><button type="button" data-privacy-open>개인정보 처리 안내</button></div>
+      <div><strong>CUSTOMER CARE</strong><a href="#notify" data-apply-link>알림 신청 · 15% 코드</a><button type="button" data-privacy-open>개인정보 처리 안내</button></div>
       <div><strong>FOLLOW</strong><a href="#" aria-label="Instagram 링크 준비 중">Instagram</a></div>
     </div>
     <p class="footer-note">이 페이지는 수업 실습용 페이지입니다. 실제 판매·결제는 이루어지지 않으며, 표기된 수치·후기는 예시입니다.</p>

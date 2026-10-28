@@ -184,6 +184,36 @@ function initHueCursor() {
   document.addEventListener("pointerup", () => cursor.classList.remove("pressed"));
 }
 
+function initApplyNavigation() {
+  const target = document.querySelector("#notify");
+  if (!target) return;
+
+  const scrollToApply = (smooth = true) => {
+    target.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "start" });
+  };
+
+  const settleOnApply = () => {
+    scrollToApply(false);
+    requestAnimationFrame(() => scrollToApply(false));
+    [180, 520, 1100].forEach((delay) => setTimeout(() => scrollToApply(false), delay));
+  };
+
+  document.querySelectorAll("[data-apply-link]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const destination = new URL(link.href, window.location.href);
+      if (destination.pathname !== window.location.pathname || destination.hash !== "#notify") return;
+      event.preventDefault();
+      if (window.location.hash !== "#notify") history.pushState(null, "", "#notify");
+      settleOnApply();
+    });
+  });
+
+  if (window.location.hash === "#notify") {
+    requestAnimationFrame(settleOnApply);
+    window.addEventListener("load", settleOnApply, { once: true });
+  }
+}
+
 function initPrivacyForm() {
   const modal = document.querySelector("#privacy-modal");
   if (!modal) return;
@@ -260,6 +290,7 @@ function initProductPage() {
   document.title = `${product.name} · ${product.locationKo} | HUE`;
   setText("[data-product-location]", product.location);
   setText("[data-product-name]", product.name);
+  setText("[data-review-product]", product.name);
   setText("[data-product-kicker]", product.kicker);
   setText("[data-product-description]", product.description);
   setText("[data-product-blend]", product.blend);
@@ -374,9 +405,92 @@ function initPackageReveal() {
   dots.forEach((dot) => dot.addEventListener("click", () => setOpen(dot.dataset.packIndex === "1")));
 }
 
+function initReviewForm() {
+  const form = document.querySelector("#review-form");
+  const list = document.querySelector("[data-review-list]");
+  if (!form || !list) return;
+
+  const requested = new URLSearchParams(window.location.search).get("blend") || "bukchon";
+  const key = Object.prototype.hasOwnProperty.call(HUE_PRODUCTS, requested) ? requested : "bukchon";
+  const storageKey = `hue-reviews-v2-${key}`;
+  const count = document.querySelector("[data-review-count]");
+  const score = document.querySelector("[data-review-score]");
+  const starsLabel = document.querySelector("[data-review-stars]");
+  const status = document.querySelector("[data-review-status]");
+  let saved = [];
+
+  try {
+    saved = JSON.parse(localStorage.getItem(storageKey) || "[]");
+    if (!Array.isArray(saved)) saved = [];
+  } catch (_) {
+    saved = [];
+  }
+
+  const createReview = (review) => {
+    const article = document.createElement("article");
+    article.className = "review-card is-user-review";
+
+    const meta = document.createElement("div");
+    const stars = document.createElement("span");
+    stars.textContent = `${"★".repeat(review.rating)}${"☆".repeat(5 - review.rating)}`;
+    stars.setAttribute("aria-label", `별점 ${review.rating}점`);
+    const time = document.createElement("time");
+    time.dateTime = review.iso;
+    time.textContent = review.date;
+    meta.append(stars, time);
+
+    const title = document.createElement("h3");
+    title.textContent = `${review.rating}점 · ${HUE_PRODUCTS[key].name}`;
+    const content = document.createElement("p");
+    content.textContent = review.content;
+    const reviewer = document.createElement("small");
+    reviewer.textContent = review.reviewer.toUpperCase();
+    article.append(meta, title, content, reviewer);
+    return article;
+  };
+
+  const updateSummary = () => {
+    const total = saved.reduce((sum, item) => sum + Number(item.rating || 0), 9);
+    const totalCount = saved.length + 2;
+    const average = (total / totalCount).toFixed(1);
+    if (count) count.textContent = String(totalCount);
+    if (score) score.textContent = average;
+    if (starsLabel) starsLabel.setAttribute("aria-label", `별점 5점 중 ${average}점`);
+  };
+
+  saved.forEach((review) => list.prepend(createReview(review)));
+  updateSummary();
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+
+    const data = new FormData(form);
+    const now = new Date();
+    const review = {
+      reviewer: String(data.get("reviewer") || "HUE GUEST").trim(),
+      rating: Math.min(5, Math.max(1, Number(data.get("rating")) || 5)),
+      content: String(data.get("content") || "").trim(),
+      iso: now.toISOString().slice(0, 10),
+      date: new Intl.DateTimeFormat("ko-KR", { year: "numeric", month: "2-digit", day: "2-digit" }).format(now).replace(/\. /g, ".").replace(/\.$/, "")
+    };
+
+    if (!review.reviewer || !review.content) return;
+    saved.push(review);
+    saved = saved.slice(-20);
+    try { localStorage.setItem(storageKey, JSON.stringify(saved)); } catch (_) {}
+    list.prepend(createReview(review));
+    updateSummary();
+    form.reset();
+    if (status) status.textContent = "후기가 등록되었습니다. 이 브라우저에서 바로 확인할 수 있어요.";
+  });
+}
+
 initHeader();
 initReveal();
 initHueCursor();
+initApplyNavigation();
 initPrivacyForm();
 initProductPage();
 initPackageReveal();
+initReviewForm();
