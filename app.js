@@ -359,7 +359,7 @@ function initProductPage() {
   }
 
   const images = [
-    ["[data-product-pack]", product.pack, `${product.locationKo} ${product.name} 패키지`],
+    ["[data-product-pack-door]", product.pack, ""],
     ["[data-product-detail]", product.detail, `${product.name} 블렌드의 재료와 티백`],
     ["[data-product-ritual]", product.ritual, `${product.name}의 재료, 우린 차와 전통 문양 티백`],
     ["[data-product-open]", product.open, `${product.locationKo} ${product.name} 문이 열린 패키지와 내부 티백`],

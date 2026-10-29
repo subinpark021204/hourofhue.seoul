@@ -11,8 +11,8 @@
   <meta property="og:description" content="서울의 다섯 동네, 다섯 시간, 다섯 가지 차.">
   <meta property="og:image" content="assets/images/place-bukchon.jpg">
   <link rel="icon" href="assets/images/hue-logo-dark.png">
-  <link rel="stylesheet" href="styles.css?v=20261028-restore">
-  <script src="app.js?v=20261028-restore" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261029-finder">
+  <script src="app.js?v=20261029-finder" defer></script>
 </head>
 <body class="home-page">
   <a class="skip-link" href="#main">본문으로 바로가기</a>
@@ -30,9 +30,9 @@
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span class="sr-only">메뉴 열기</span></button>
     <nav class="site-nav" id="site-nav" aria-label="주요 메뉴">
       <a href="shop.html">SHOP</a>
+      <a href="tea-finder.html">TEA FINDER</a>
       <a href="#about">ABOUT HUE</a>
       <a href="#collection">THE HOURS</a>
-      <a href="#ritual">RITUAL</a>
     </nav>
     <div class="header-tools"><a href="#apply-form" data-apply-link>알림 신청</a><span aria-hidden="true">KR</span></div>
   </header>
@@ -41,7 +41,7 @@
     <section class="brand-hero">
       <div class="brand-hero-map reveal" aria-label="서울의 다섯 동네에서 HUE 블렌드를 고르는 지도">
         <div class="map-meta"><span>SEOUL · FIVE HOURS</span><span>CLICK A TEA TAG TO SHOP</span></div>
-        <img class="seoul-map" src="assets/images/seoul-map.svg?v=20261028-illustration" alt="" aria-hidden="true">
+        <img class="seoul-map" src="assets/images/seoul-map.svg?v=20261029-abstract" alt="" aria-hidden="true">
 
         <div class="map-marker-layer">
           <a class="map-marker marker-yeonnam" href="product.html?blend=yeonnam" data-cursor="SHOP" aria-label="연남 6시 42분 Rose Hibiscus 쇼핑하기">
@@ -70,6 +70,23 @@
           <a class="button button-dark" href="shop.html" data-cursor="SHOP">SHOP THE HOURS</a>
           <a class="text-link" href="#about">HUE 알아보기 <span aria-hidden="true">↓</span></a>
         </div>
+      </div>
+    </section>
+
+    <section class="finder-callout reveal" aria-labelledby="finder-callout-title">
+      <div class="finder-callout-copy">
+        <p class="eyebrow">HUE · TEA MOMENT FINDER</p>
+        <h2 id="finder-callout-title">오늘의 당신은<br>어떤 차인가요?</h2>
+        <p>지금의 마음을 따라 고르면, 당신에게 어울리는 차 한 잔을 찾아드려요.</p>
+        <div class="finder-callout-actions">
+          <a class="button" href="tea-finder.html" data-cursor="FIND">오늘의 차 찾기</a>
+          <span>약 1분 · 로그인 없이 참여</span>
+        </div>
+      </div>
+      <div class="finder-callout-visual" aria-hidden="true">
+        <img src="assets/images/pack-seochon.png" alt="">
+        <img src="assets/images/pack-haebangchon.png" alt="">
+        <img src="assets/images/pack-yeonnam.png" alt="">
       </div>
     </section>
 
@@ -215,7 +232,7 @@
   <footer class="site-footer">
     <div class="footer-wordmark">Hue</div>
     <div class="footer-links">
-      <div><strong>ABOUT HUE</strong><a href="#about">브랜드 이야기</a><a href="#collection">서울의 시간</a></div>
+      <div><strong>ABOUT HUE</strong><a href="#about">브랜드 이야기</a><a href="#collection">서울의 시간</a><a href="tea-finder.html">오늘의 차 찾기</a></div>
       <div><strong>SHOP</strong><a href="shop.html">전체 블렌드</a><a href="product.html?blend=bukchon">Bukchon 8:00</a><a href="product.html?blend=seochon">Seochon 11:00</a><a href="product.html?blend=seongsu">Seongsu 4:00</a><a href="product.html?blend=yeonnam">Yeonnam 6:42</a><a href="product.html?blend=haebangchon">Haebangchon 0:00</a></div>
       <div><strong>CUSTOMER CARE</strong><a href="#apply-form" data-apply-link>첫 블렌드 알림</a><button type="button" data-privacy-open>개인정보 처리 안내</button></div>
       <div><strong>FOLLOW</strong><a class="instagram-link" href="https://www.instagram.com/hourofhue.seoul/" target="_blank" rel="noreferrer" aria-label="HUE Instagram 새 창에서 열기"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.7" r="1" class="is-filled"/></svg><span>hourofhue.seoul</span></a></div>

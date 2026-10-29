@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2f0eb">
+  <title>오늘의 차 찾기 | HUE 휴</title>
+  <meta name="description" content="다섯 개의 짧은 질문을 따라 오늘의 나에게 어울리는 HUE 차 한 잔을 찾아보세요.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="오늘의 당신은 어떤 차인가요? | HUE">
+  <meta property="og:description" content="지금의 마음을 따라 고르면, 당신에게 어울리는 차 한 잔을 찾아드려요.">
+  <meta property="og:image" content="assets/images/hero-five-products.jpg">
+  <link rel="icon" href="assets/images/hue-logo-dark.png">
+  <link rel="stylesheet" href="styles.css?v=20261029-finder">
+  <script src="app.js?v=20261029-finder" defer></script>
+  <script src="tea-finder-data.js?v=20261029-finder" defer></script>
+  <script src="tea-finder.js?v=20261029-finder" defer></script>
+</head>
+<body class="finder-page">
+  <a class="skip-link" href="#main">본문으로 바로가기</a>
+
+  <div class="announcement finder-announcement">
+    <p>5개의 질문으로 오늘의 HUE를 만나보세요.</p>
+    <a href="#finder" data-finder-start-link>약 1분 <span aria-hidden="true">↗</span></a>
+  </div>
+
+  <header class="site-header" data-header>
+    <a class="brand" href="index.html" aria-label="HUE 홈"><img src="assets/images/hue-logo-dark.png" alt="HUE"><span>SEOUL · BLENDED TEA</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span class="sr-only">메뉴 열기</span></button>
+    <nav class="site-nav" id="site-nav" aria-label="주요 메뉴"><a href="shop.html">SHOP</a><a class="active" href="tea-finder.html">TEA FINDER</a><a href="index.html#about">ABOUT HUE</a><a href="index.html#collection">THE HOURS</a></nav>
+    <div class="header-tools"><a href="index.html#apply-form">알림 신청</a><span aria-hidden="true">KR</span></div>
+  </header>
+
+  <main id="main">
+    <div class="finder-shell" id="finder" data-finder-app>
+      <section class="finder-intro finder-view is-active" data-finder-view="intro" aria-labelledby="finder-intro-title">
+        <div class="finder-intro-copy">
+          <p class="eyebrow">HUE · TEA MOMENT FINDER</p>
+          <h1 id="finder-intro-title">오늘의 당신은<br>어떤 차인가요?</h1>
+          <p class="finder-lede">지금의 마음을 따라 고르면, 당신에게 어울리는 차 한 잔을 찾아드려요.</p>
+          <div class="finder-intro-actions">
+            <button class="button button-dark finder-start" type="button" data-finder-start>오늘의 차 찾기</button>
+            <span>약 1분 · 로그인 없이 참여</span>
+          </div>
+          <p class="finder-gate-note">다섯 질문을 마친 뒤 이름과 이메일을 입력하면 결과가 열려요. 입력값은 전송하거나 저장하지 않습니다.</p>
+        </div>
+        <div class="finder-intro-visual" aria-hidden="true">
+          <div class="finder-orbit">
+            <img src="assets/images/pack-bukchon.png" alt="">
+            <img src="assets/images/pack-seochon.png" alt="">
+            <img src="assets/images/pack-seongsu.png" alt="">
+            <img src="assets/images/pack-yeonnam.png" alt="">
+            <img src="assets/images/pack-haebangchon.png" alt="">
+          </div>
+          <span>FIVE HOURS<br>ONE MOMENT</span>
+        </div>
+      </section>
+
+      <section class="finder-question finder-view" data-finder-view="question" aria-labelledby="finder-question-title" hidden>
+        <header class="finder-progress-head">
+          <p><span data-finder-step>01</span> / 05</p>
+          <p data-finder-category>오늘의 기분</p>
+        </header>
+        <div class="finder-progress" role="progressbar" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" aria-label="질문 진행 상태"><span data-finder-progress></span></div>
+        <div class="finder-question-body">
+          <p class="eyebrow">FOLLOW YOUR MOMENT</p>
+          <h2 id="finder-question-title" tabindex="-1" data-finder-question></h2>
+          <div class="finder-options" data-finder-options></div>
+        </div>
+        <button class="finder-back" type="button" data-finder-back><span aria-hidden="true">←</span> 이전 질문</button>
+      </section>
+
+      <section class="finder-gate finder-view" data-finder-view="gate" aria-labelledby="finder-gate-title" hidden>
+        <div class="finder-gate-copy">
+          <p class="eyebrow">YOUR TEA IS READY</p>
+          <h2 id="finder-gate-title" tabindex="-1">오늘의 차가<br>준비되었어요.</h2>
+          <p>짧은 편지와 추천 차를 받으려면 이름과 이메일을 입력해 주세요.</p>
+          <p class="finder-privacy">입력값은 이 브라우저 화면에서 결과를 여는 데만 사용되며, 서버나 외부 서비스로 전송·저장되지 않습니다.</p>
+        </div>
+        <form class="finder-gate-form" data-finder-gate-form novalidate autocomplete="off">
+          <label class="field"><span>이름</span><input name="name" type="text" maxlength="20" required placeholder="홍길동" autocomplete="name"></label>
+          <label class="field"><span>이메일</span><input name="email" type="email" required placeholder="example@email.com" autocomplete="email"></label>
+          <button class="button button-dark" type="submit">오늘의 차와 편지 받기</button>
+          <button class="finder-back finder-gate-back" type="button" data-finder-back><span aria-hidden="true">←</span> 마지막 질문으로</button>
+          <p class="finder-form-status" role="alert" data-finder-form-status></p>
+        </form>
+      </section>
+
+      <section class="finder-result finder-view" data-finder-view="result" aria-labelledby="finder-result-title" hidden>
+        <article class="finder-result-card" data-result-card>
+          <div class="finder-result-copy">
+            <p class="eyebrow">TODAY'S HUE · <span data-result-location></span></p>
+            <p class="finder-result-for"><span data-result-name></span>님을 위한 오늘의 차</p>
+            <h1 id="finder-result-title" tabindex="-1" data-result-type></h1>
+            <p class="finder-result-line" data-result-line></p>
+            <ul class="finder-keywords" data-result-keywords></ul>
+            <div class="finder-letter">
+              <span>오늘의 나를 위한 짧은 편지</span>
+              <p data-result-letter></p>
+            </div>
+          </div>
+          <figure class="finder-result-product">
+            <img data-result-image src="assets/images/pack-bukchon.png" alt="">
+            <figcaption><span data-result-location></span><strong data-result-tea></strong></figcaption>
+          </figure>
+        </article>
+
+        <div class="finder-result-details">
+          <section>
+            <p class="eyebrow">WHY THIS TEA</p>
+            <h2>오늘의 답에서<br>찾은 한 잔</h2>
+            <p data-result-reason></p>
+          </section>
+          <section class="finder-small-action">
+            <span>SMALL ACTION</span>
+            <p data-result-action></p>
+          </section>
+          <dl class="finder-product-facts">
+            <div><dt>맛과 향</dt><dd data-result-flavor></dd></div>
+            <div><dt>카페인</dt><dd data-result-caffeine></dd></div>
+            <div><dt>우리는 방법</dt><dd data-result-brew></dd></div>
+          </dl>
+        </div>
+
+        <div class="finder-result-actions">
+          <a class="button button-dark" data-result-detail href="product.html?blend=bukchon">차 자세히 보기</a>
+          <button class="button button-line" type="button" data-result-share>결과 공유하기</button>
+          <button class="button button-line" type="button" data-result-download>이미지 저장</button>
+          <button class="button button-line" type="button" data-result-copy>링크 복사</button>
+          <button class="finder-restart" type="button" data-finder-restart>다시 해보기 <span aria-hidden="true">↻</span></button>
+        </div>
+        <div class="finder-share-feedback" aria-live="polite">
+          <span class="finder-share-spinner" aria-hidden="true"></span>
+          <p data-share-status>이미지를 저장해서 인스타그램 스토리에 올려보세요.</p>
+        </div>
+        <img class="finder-share-preview" data-share-preview alt="생성된 인스타그램 스토리 카드 미리보기" hidden>
+      </section>
+    </div>
+
+    <section class="finder-method section-pad" aria-labelledby="finder-method-title">
+      <p class="section-index">HOW IT WORKS</p>
+      <div>
+        <h2 id="finder-method-title">정답 대신,<br>오늘의 감각을 따라.</h2>
+        <p>이 테스트는 심리 진단이나 운세가 아닙니다. 오늘의 기분, 필요한 시간, 끌리는 맛과 향을 통해 지금의 나를 잠깐 돌아보는 HUE의 티 경험입니다.</p>
+        <details class="finder-guide">
+          <summary>5종 결과 예시와 추천 점수표 보기 <span aria-hidden="true">+</span></summary>
+          <div class="finder-examples" data-finder-examples></div>
+          <div class="finder-score-table-wrap" tabindex="0" aria-label="추천 점수표 가로 스크롤 영역"><table class="finder-score-table" data-finder-score-table></table></div>
+          <p class="finder-score-note">총점이 같으면 맛과 향 선호 점수, 오늘의 기분 점수, 고정된 차 순서로 판단합니다. 같은 답변에는 항상 같은 결과가 나옵니다.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer compact-footer">
+    <div class="footer-wordmark">Hue</div>
+    <div class="footer-links">
+      <div><strong>EXPLORE</strong><a href="tea-finder.html">오늘의 차 찾기</a><a href="shop.html">전체 블렌드</a></div>
+      <div><strong>ABOUT HUE</strong><a href="index.html#about">브랜드 이야기</a><a href="index.html#collection">서울의 시간</a></div>
+      <div><strong>FOLLOW</strong><a class="instagram-link" href="https://www.instagram.com/hourofhue.seoul/" target="_blank" rel="noreferrer"><span>hourofhue.seoul</span></a></div>
+    </div>
+    <p class="footer-note">HUE는 서울의 시간과 차의 감각을 탐구하는 브랜드 콘셉트 프로젝트입니다. 현재 정식 판매·결제는 진행되지 않습니다.</p>
+  </footer>
+</body>
+</html>
