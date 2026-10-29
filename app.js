@@ -11,6 +11,12 @@ const HUE_PRODUCTS = {
     hour: "북촌의 지붕 위로 아침빛이 번지는 8시. 하루의 첫 장면을 맑게 여는 시간입니다.",
     notes: "또렷한 블랙티, 시트러스 계열의 베르가못, 푸른 콘플라워가 만드는 단정한 균형.",
     quote: "“아침의 골목은 아직 조용하고,\n찻잔의 향이 먼저 하루를 엽니다.”",
+    moment: "assets/images/ingredient-moment-bukchon.webp",
+    ingredientSlides: [
+      { name: "블랙티", en: "BLACK TEA", copy: "또렷한 바디와 깊은 향으로 블렌드의 중심을 단정하게 잡습니다.", focus: "22% 72%" },
+      { name: "베르가못 필", en: "BERGAMOT PEEL", copy: "맑은 시트러스 향이 첫 모금의 윤곽을 선명하게 밝혀줍니다.", focus: "50% 72%" },
+      { name: "콘플라워", en: "CORNFLOWER", copy: "푸른 꽃잎이 블렌드에 고요한 색과 은은한 여운을 더합니다.", focus: "78% 72%" }
+    ],
     pack: "assets/images/pack-bukchon.png",
     detail: "assets/images/detail-bukchon.jpg",
     ritual: "assets/images/ritual-bukchon.jpg",
@@ -31,6 +37,12 @@ const HUE_PRODUCTS = {
     hour: "햇빛이 서촌의 낮은 담을 천천히 넘는 오전 11시. 서두르지 않아도 좋은 시간입니다.",
     notes: "은은한 화이트티, 말린 배의 둥근 단맛, 볶은 현미의 담백하고 고소한 마무리.",
     quote: "“느리게 밝아진 오전은,\n맑고 부드러운 맛으로 남습니다.”",
+    moment: "assets/images/ingredient-moment-seochon.webp",
+    ingredientSlides: [
+      { name: "화이트티", en: "WHITE TEA", copy: "섬세하고 투명한 차의 결이 서촌의 느린 오전을 닮았습니다.", focus: "22% 72%" },
+      { name: "말린 배", en: "DRIED PEAR", copy: "말린 배의 둥근 단맛이 잔 안에서 부드럽고 길게 이어집니다.", focus: "50% 72%" },
+      { name: "볶은 현미", en: "ROASTED BROWN RICE", copy: "담백하게 볶은 곡물 향이 편안하고 고소한 마무리를 만듭니다.", focus: "78% 72%" }
+    ],
     pack: "assets/images/pack-seochon.png",
     detail: "assets/images/detail-seochon.jpg",
     ritual: "assets/images/ritual-seochon.jpg",
@@ -51,6 +63,12 @@ const HUE_PRODUCTS = {
     hour: "작업실의 빛이 길어지고 커피 한 잔을 더 고민하게 되는 오후 4시. 다른 리듬을 고르는 시간입니다.",
     notes: "구운 카카오의 고소하고 깊은 향, 블랙티의 구조감, 오렌지 필의 산뜻한 끝맛.",
     quote: "“익숙한 오후 사이,\n조금 다른 향으로 속도를 바꿉니다.”",
+    moment: "assets/images/ingredient-moment-seongsu.webp",
+    ingredientSlides: [
+      { name: "블랙티", en: "BLACK TEA", copy: "힘 있는 차의 구조감이 오후의 흐트러진 리듬을 다시 세웁니다.", focus: "22% 72%" },
+      { name: "로스티드 카카오", en: "ROASTED CACAO", copy: "구운 카카오의 깊고 따뜻한 향이 블렌드의 밀도를 높입니다.", focus: "50% 72%" },
+      { name: "오렌지 필", en: "ORANGE PEEL", copy: "산뜻한 오렌지 끝향이 묵직한 풍미 사이에 가벼운 전환을 만듭니다.", focus: "78% 72%" }
+    ],
     pack: "assets/images/pack-seongsu.png",
     detail: "assets/images/detail-seongsu.jpg",
     ritual: "assets/images/ritual-seongsu.jpg",
@@ -71,6 +89,12 @@ const HUE_PRODUCTS = {
     hour: "연남의 골목과 창문이 붉게 물드는 오후 6시 42분. 낮과 밤 사이 잠깐 머무는 빛입니다.",
     notes: "루비빛 히비스커스의 선명한 산미, 루이보스의 부드러운 바디, 장미 꽃잎의 향긋한 마무리.",
     quote: "“해가 지기 직전의 색은,\n잠시 머물다 향으로 남습니다.”",
+    moment: "assets/images/ingredient-moment-yeonnam.webp",
+    ingredientSlides: [
+      { name: "히비스커스", en: "HIBISCUS", copy: "루비빛 색과 선명한 산미가 블렌드의 첫인상을 생기 있게 엽니다.", focus: "22% 72%" },
+      { name: "루이보스", en: "ROOIBOS", copy: "매끄럽고 부드러운 바디가 꽃과 과실의 향을 편안하게 받쳐줍니다.", focus: "50% 72%" },
+      { name: "장미 꽃잎", en: "ROSE PETAL", copy: "장미 꽃잎의 향긋한 여운이 해 질 무렵의 공기처럼 길게 남습니다.", focus: "78% 72%" }
+    ],
     pack: "assets/images/pack-yeonnam.png",
     detail: "assets/images/detail-yeonnam.jpg",
     ritual: "assets/images/ritual-yeonnam.jpg",
@@ -91,6 +115,12 @@ const HUE_PRODUCTS = {
     hour: "도시의 불빛이 멀어지고 방 안이 조용해지는 자정. 하루를 천천히 내려놓는 시간입니다.",
     notes: "포근한 캐모마일, 말린 사과의 은은한 단맛, 콘플라워가 남기는 고요한 여운.",
     quote: "“자정의 푸른 고요 속에서,\n오늘을 천천히 내려놓습니다.”",
+    moment: "assets/images/ingredient-moment-haebangchon.webp",
+    ingredientSlides: [
+      { name: "캐모마일", en: "CHAMOMILE", copy: "포근한 꽃 향이 하루의 끝을 부드럽고 고요하게 감쌉니다.", focus: "22% 72%" },
+      { name: "말린 사과", en: "DRIED APPLE", copy: "말린 사과의 은은한 단맛이 잔 안에 편안한 온도를 더합니다.", focus: "50% 72%" },
+      { name: "콘플라워", en: "CORNFLOWER", copy: "푸른 꽃잎이 자정의 색을 닮은 조용한 여운을 남깁니다.", focus: "78% 72%" }
+    ],
     pack: "assets/images/pack-haebangchon.png",
     detail: "assets/images/detail-haebangchon.jpg",
     ritual: "assets/images/ritual-haebangchon.jpg",
@@ -363,6 +393,7 @@ function initProductPage() {
     ["[data-product-detail]", product.detail, `${product.name} 블렌드의 재료와 티백`],
     ["[data-product-ritual]", product.ritual, `${product.name}의 재료, 우린 차와 전통 문양 티백`],
     ["[data-product-open]", product.open, `${product.locationKo} ${product.name} 문이 열린 패키지와 내부 티백`],
+    ["[data-product-moment]", product.moment, `${product.locationKo} ${product.name}의 재료와 우린 차`],
     ["[data-product-place]", product.place, `${product.locationKo}의 시간과 ${product.name}`]
   ];
   images.forEach(([selector, src, alt]) => {
@@ -389,6 +420,84 @@ function initProductPage() {
           <div><h3>${item.locationKo}</h3><p>${item.flavor}</p></div>
         </a>`).join("");
   }
+}
+
+function initIngredientExperience() {
+  const section = document.querySelector("[data-ingredient-experience]");
+  if (!section || !document.body.hasAttribute("data-product-page")) return;
+
+  const requested = new URLSearchParams(window.location.search).get("blend") || "bukchon";
+  const key = Object.prototype.hasOwnProperty.call(HUE_PRODUCTS, requested) ? requested : "bukchon";
+  const product = HUE_PRODUCTS[key];
+  const ingredients = product.ingredientSlides || [];
+  const viewport = section.querySelector("[data-ingredient-viewport]");
+  const track = section.querySelector("[data-ingredient-track]");
+  const pagination = section.querySelector("[data-ingredient-pagination]");
+  const previous = section.querySelector("[data-ingredient-prev]");
+  const next = section.querySelector("[data-ingredient-next]");
+  if (!viewport || !track || !pagination || !ingredients.length) return;
+
+  track.innerHTML = ingredients.map((ingredient, index) => `
+    <article class="ingredient-slide" aria-hidden="${index !== 0}">
+      <div class="ingredient-focus" style="--ingredient-image:url('${product.detail}');--ingredient-focus:${ingredient.focus}" aria-hidden="true"></div>
+      <div class="ingredient-slide-copy">
+        <span>${String(index + 1).padStart(2, "0")} / ${String(ingredients.length).padStart(2, "0")}</span>
+        <p>${ingredient.en}</p>
+        <h3>${ingredient.name}</h3>
+        <p>${ingredient.copy}</p>
+      </div>
+    </article>`).join("");
+
+  pagination.innerHTML = ingredients.map((ingredient, index) => `
+    <button type="button" data-ingredient-index="${index}" aria-label="${ingredient.name} 보기" aria-pressed="${index === 0}">${String(index + 1).padStart(2, "0")}</button>`).join("");
+
+  const slides = [...track.querySelectorAll(".ingredient-slide")];
+  const dots = [...pagination.querySelectorAll("button")];
+  let activeIndex = 0;
+  let pointerStart = null;
+
+  const showIngredient = (nextIndex) => {
+    activeIndex = (nextIndex + ingredients.length) % ingredients.length;
+    track.style.transform = `translate3d(-${activeIndex * 100}%,0,0)`;
+    slides.forEach((slide, index) => {
+      const active = index === activeIndex;
+      slide.classList.toggle("is-active", active);
+      slide.setAttribute("aria-hidden", String(!active));
+    });
+    dots.forEach((dot, index) => {
+      const active = index === activeIndex;
+      dot.classList.toggle("is-active", active);
+      dot.setAttribute("aria-pressed", String(active));
+    });
+  };
+
+  previous?.addEventListener("click", () => showIngredient(activeIndex - 1));
+  next?.addEventListener("click", () => showIngredient(activeIndex + 1));
+  dots.forEach((dot) => dot.addEventListener("click", () => showIngredient(Number(dot.dataset.ingredientIndex))));
+
+  viewport.addEventListener("pointerdown", (event) => {
+    pointerStart = event.clientX;
+    viewport.setPointerCapture?.(event.pointerId);
+  });
+  viewport.addEventListener("pointerup", (event) => {
+    if (pointerStart === null) return;
+    const distance = event.clientX - pointerStart;
+    pointerStart = null;
+    if (Math.abs(distance) > 42) showIngredient(activeIndex + (distance < 0 ? 1 : -1));
+  });
+  viewport.addEventListener("pointercancel", () => { pointerStart = null; });
+  viewport.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      showIngredient(activeIndex + 1);
+    }
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      showIngredient(activeIndex - 1);
+    }
+  });
+
+  showIngredient(0);
 }
 
 function initPackageReveal() {
@@ -539,5 +648,6 @@ initApplyNavigation();
 initOfferModal();
 initPrivacyForm();
 initProductPage();
+initIngredientExperience();
 initPackageReveal();
 initReviewForm();
