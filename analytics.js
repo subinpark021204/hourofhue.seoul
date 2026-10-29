@@ -87,6 +87,28 @@
 
     if (typeof window.gtag === "function") {
       window.gtag("event", eventName, payload);
+      if (window.fbq && eventName !== "page_view" && !eventName.includes("scroll")) {
+        const metaEventName = {
+          generate_lead: "Lead",
+          sign_up: "CompleteRegistration",
+          contact_click: "Contact",
+          view_item: "ViewContent",
+          add_to_cart: "AddToCart",
+          begin_checkout: "InitiateCheckout",
+          search: "Search"
+        }[eventName];
+
+        if (eventName === "purchase") {
+          fbq("track", "Purchase", {
+            value: Number(payload.value) || 0,
+            currency: "KRW"
+          });
+        } else if (metaEventName) {
+          fbq("track", metaEventName);
+        } else {
+          fbq("trackCustom", eventName);
+        }
+      }
     } else {
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push(["event", eventName, payload]);
