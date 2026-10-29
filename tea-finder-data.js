@@ -108,7 +108,7 @@ window.HUE_TEA_FINDER_DATA = {
     {
       id: "energy",
       category: "에너지를 채우는 방식",
-      prompt: "에너지가 조금 비었을 때, 나는 보통 어떻게 채우나요?",
+      prompt: "기운이 조금 떨어질 때, 어떻게 충전하나요?",
       options: [
         { id: "alone", label: "혼자 있는 조용한 시간을 만들어요", note: "소리를 줄이고 내 마음을 살펴봐요.", reason: "혼자 있는 고요에서 에너지를 채우는 방식", scores: { haebangchon: 4, seochon: 2 } },
         { id: "walk", label: "동네를 천천히 걸으며 장면을 모아요", note: "익숙한 풍경 속 작은 변화를 찾아요.", reason: "천천히 걸으며 장면을 모으는 방식", scores: { seochon: 3, bukchon: 2, yeonnam: 1 } },
@@ -130,12 +130,12 @@ window.HUE_TEA_FINDER_DATA = {
     {
       id: "moment",
       category: "오늘의 순간",
-      prompt: "오늘 한 잔의 차와 함께 남기고 싶은 장면은?",
+      prompt: "오늘 차 한 잔과 함께 보내고 싶은 순간은 언제인가요?",
       options: [
-        { id: "morning", label: "하루를 열기 전, 책상 위의 맑은 아침", note: "첫 장면을 단정하게 시작해요.", reason: "하루를 열기 전의 맑은 아침", scores: { bukchon: 4, seochon: 2 } },
-        { id: "afternoon", label: "몰입 사이 잠깐 멈추는 따뜻한 오후", note: "익숙한 리듬에 쉼표를 찍어요.", reason: "몰입 사이 잠깐 멈추는 오후", scores: { seongsu: 4, seochon: 1 } },
-        { id: "sunset", label: "좋아하는 음악과 함께 걷는 해 질 무렵", note: "빛과 기분의 변화를 즐겨요.", reason: "음악과 함께 걷는 해 질 무렵", scores: { yeonnam: 4, seongsu: 1 } },
-        { id: "night", label: "알림을 끄고 하루를 내려놓는 늦은 밤", note: "오늘의 끝을 조용히 맞이해요.", reason: "알림을 끄고 하루를 내려놓는 밤", scores: { haebangchon: 5, seochon: 1 } }
+        { id: "morning", label: "햇살이 들어오는 아침", note: "차 한 잔과 함께 차분하게 하루를 시작하고 싶어요.", reason: "차분하게 하루를 시작하고 싶은 아침", scores: { bukchon: 4, seochon: 2 } },
+        { id: "afternoon", label: "바쁜 일상 중 잠깐 쉬어가는 오후", note: "따뜻한 차 한 잔으로 기분을 전환하고 싶어요.", reason: "따뜻한 한 잔으로 기분을 전환하고 싶은 오후", scores: { seongsu: 4, seochon: 1 } },
+        { id: "sunset", label: "노을이 지는 저녁", note: "좋아하는 음악을 들으며 여유롭게 시간을 보내고 싶어요.", reason: "음악과 함께 여유롭게 보내고 싶은 저녁", scores: { yeonnam: 4, seongsu: 1 } },
+        { id: "night", label: "하루 일과를 마친 늦은 밤", note: "휴대폰을 잠시 내려놓고 편안하게 쉬고 싶어요.", reason: "휴대폰을 내려놓고 편안하게 쉬고 싶은 밤", scores: { haebangchon: 5, seochon: 1 } }
       ]
     }
   ],
