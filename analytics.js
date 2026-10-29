@@ -227,10 +227,14 @@
 
     if (form.matches("#review-form") && valid) {
       const rating = Number(new FormData(form).get("rating")) || 5;
-      track("review_submit", {
-        product_id: productId || "bukchon",
-        rating
-      });
+      window.setTimeout(() => {
+        const status = document.querySelector("[data-review-status]");
+        if (!status?.textContent.includes("후기가 등록되었습니다")) return;
+        track("review_submit", {
+          product_id: productId || "bukchon",
+          rating
+        });
+      }, 0);
     }
   }, true);
 
