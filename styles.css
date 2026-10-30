@@ -1011,10 +1011,26 @@ body { background: #f2f0eb; }
 .finder-callout-actions span { font-size: 10px; letter-spacing: .12em; }
 .finder-callout-visual { position: relative; display: grid; place-items: center; overflow: hidden; background: radial-gradient(circle at center,rgba(255,255,255,.15),transparent 57%); }
 .finder-callout-visual::before { position: absolute; width: 64%; aspect-ratio: 1; content: ""; border: 1px solid rgba(238,233,220,.24); border-radius: 50%; }
-.finder-callout-visual img { position: absolute; width: 34%; height: 70%; object-fit: contain; filter: drop-shadow(0 28px 28px rgba(0,0,0,.28)); }
-.finder-callout-visual img:nth-child(1) { transform: translateX(-66%) rotate(-9deg); }
-.finder-callout-visual img:nth-child(2) { z-index: 2; transform: translateY(-3%); }
-.finder-callout-visual img:nth-child(3) { transform: translateX(66%) rotate(9deg); }
+.finder-callout-visual img {
+  position: absolute;
+  bottom: 12%;
+  width: 29%;
+  height: 72%;
+  object-fit: contain;
+  transform-origin: 50% 92%;
+  filter: drop-shadow(0 28px 28px rgba(0,0,0,.28));
+  animation: package-fan-open .9s cubic-bezier(.2,.72,.18,1) both;
+  animation-delay: var(--fan-delay,0s);
+}
+.finder-callout-visual img:nth-child(1) { --fan-x:-112%; --fan-y:9%; --fan-rotate:-18deg; --fan-delay:.08s; z-index: 1; }
+.finder-callout-visual img:nth-child(2) { --fan-x:-59%; --fan-y:1%; --fan-rotate:-9deg; --fan-delay:.16s; z-index: 2; }
+.finder-callout-visual img:nth-child(3) { --fan-x:0%; --fan-y:-4%; --fan-rotate:0deg; --fan-delay:.24s; z-index: 5; }
+.finder-callout-visual img:nth-child(4) { --fan-x:59%; --fan-y:1%; --fan-rotate:9deg; --fan-delay:.32s; z-index: 2; }
+.finder-callout-visual img:nth-child(5) { --fan-x:112%; --fan-y:9%; --fan-rotate:18deg; --fan-delay:.4s; z-index: 1; }
+@keyframes package-fan-open {
+  from { opacity: 0; transform: translate(0,22%) rotate(0) scale(.72); }
+  to { opacity: 1; transform: translate(var(--fan-x),var(--fan-y)) rotate(var(--fan-rotate)) scale(1); }
+}
 
 .finder-view[hidden] { display: none !important; }
 .finder-shell { padding: 10px; }
@@ -1217,6 +1233,56 @@ body { background: #f2f0eb; }
 .marker-seongsu img,
 .marker-haebangchon img { transform: scaleY(1.16); }
 
+/* 2026-10-30 · Illustrated Seoul map and five-package fan */
+.brand-hero-map.is-illustrated-map { background: #faf7ed; }
+.is-illustrated-map .map-meta { color: #173047; mix-blend-mode: multiply; }
+.is-illustrated-map .map-caption { color: #173047; }
+.is-illustrated-map .seoul-map {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: none;
+}
+.is-illustrated-map .map-marker-layer {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.is-illustrated-map .map-marker {
+  width: clamp(66px,7vw,96px);
+  aspect-ratio: 1;
+  border-radius: 12px;
+  transform: translate(-50%,-50%);
+}
+.is-illustrated-map .map-marker img { opacity: 0; }
+.is-illustrated-map .map-marker::after {
+  position: absolute;
+  inset: -5px;
+  display: grid;
+  place-items: end center;
+  padding-bottom: 4px;
+  content: "SHOP";
+  color: #173047;
+  border: 1px solid rgba(23,48,71,.6);
+  border-radius: 12px;
+  background: rgba(255,255,255,.08);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  opacity: 0;
+  transition: opacity .25s ease,transform .35s var(--ease);
+}
+.is-illustrated-map .map-marker:hover,
+.is-illustrated-map .map-marker:focus-visible { transform: translate(-50%,-54%) scale(1.05); }
+.is-illustrated-map .map-marker:hover::after,
+.is-illustrated-map .map-marker:focus-visible::after { opacity: 1; transform: translateY(-2px); }
+.is-illustrated-map .marker-yeonnam { --x:24.4%; --y:35.6%; }
+.is-illustrated-map .marker-seochon { --x:42.2%; --y:24.5%; }
+.is-illustrated-map .marker-bukchon { --x:69.9%; --y:24.6%; }
+.is-illustrated-map .marker-haebangchon { --x:47.2%; --y:52.6%; }
+.is-illustrated-map .marker-seongsu { --x:88.1%; --y:58.2%; }
+
 .product-detail-redesign { grid-template-columns: minmax(0,1.35fr) minmax(440px,.85fr); }
 .product-detail-redesign .product-info { padding: 7vw 4.6vw 5vw; }
 .product-info h1 {
@@ -1290,6 +1356,16 @@ body { background: #f2f0eb; }
   .marker-bukchon { --x:57%; --y:29%; }
   .marker-seongsu { --x:70%; --y:62%; }
   .marker-haebangchon { --x:50%; --y:68%; }
+  .brand-hero-map.is-illustrated-map { min-height: 0; aspect-ratio: 1; }
+  .is-illustrated-map .seoul-map,
+  .is-illustrated-map .map-marker-layer { inset: 0; width: 100%; height: 100%; }
+  .is-illustrated-map .map-marker { width: clamp(54px,15vw,70px); }
+  .is-illustrated-map .marker-yeonnam { --x:24.4%; --y:35.6%; }
+  .is-illustrated-map .marker-seochon { --x:42.2%; --y:24.5%; }
+  .is-illustrated-map .marker-bukchon { --x:69.9%; --y:24.6%; }
+  .is-illustrated-map .marker-haebangchon { --x:47.2%; --y:52.6%; }
+  .is-illustrated-map .marker-seongsu { --x:88.1%; --y:58.2%; }
+  .finder-callout-visual img { width: 28%; height: 68%; }
   .product-detail-redesign .product-info { padding: 78px 22px 88px; }
   .product-info h1 { font-size: clamp(40px,12vw,58px); line-height: 1.02; }
   .product-kicker { margin-top: 34px; font-size: 16px; line-height: 1.8; }
