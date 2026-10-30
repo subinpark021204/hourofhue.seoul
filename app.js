@@ -5,6 +5,7 @@ const HUE_PRODUCTS = {
     name: "Earl Grey",
     flavor: "EARL GREY",
     kicker: "아침 햇살이 비치는 북촌의 골목.",
+    kickerDisplay: "아침 햇살이 비치는\n북촌의 골목.",
     description: "홍차의 깊고 깔끔한 맛에 베르가못의 산뜻한 시트러스 향이 더해진 블렌드. 콘플라워의 은은한 꽃향이 어우러져 가볍고 상쾌하게 하루를 시작하기 좋습니다.",
     blend: "Black tea blend",
     ingredients: "블랙티, 베르가못 필, 콘플라워",
@@ -31,6 +32,7 @@ const HUE_PRODUCTS = {
     name: "Pear White Tea",
     flavor: "PEAR WHITE TEA",
     kicker: "바쁜 오전, 잠시 쉬어가는 한 잔.",
+    kickerDisplay: "바쁜 오전,\n잠시 쉬어가는 한 잔.",
     description: "화이트티의 은은한 풍미에 말린 배의 부드러운 단맛과 볶은 현미의 고소한 향을 더한 블렌드. 자극적이지 않고 담백한 맛으로 바쁜 오전에도 부담 없이 즐기기 좋습니다.",
     blend: "White tea blend",
     ingredients: "화이트티, 말린 배, 볶은 현미",
@@ -56,7 +58,8 @@ const HUE_PRODUCTS = {
     locationKo: "성수 4:00",
     name: "Roasted Cacao",
     flavor: "ROASTED CACAO",
-    kicker: "나른한 오후 4시, 기분을 전환하는 한 잔.",
+    kicker: "오후 4시, 기분을 전환하는 한 잔",
+    kickerDisplay: "오후 4시,\n기분을 전환하는 한 잔",
     description: "블랙티에 로스티드 카카오닙스의 깊고 고소한 풍미와 오렌지필의 산뜻한 향을 더한 블렌드. 커피처럼 진하고 쌉쌀한 맛을 즐기면서도 한결 가볍게 마실 수 있는 오후의 티입니다.",
     blend: "Black Tea Blend",
     ingredients: "블랙티, 로스티드 카카오닙스, 오렌지필",
@@ -83,6 +86,7 @@ const HUE_PRODUCTS = {
     name: "Rose Hibiscus",
     flavor: "ROSE HIBISCUS",
     kicker: "노을이 물드는 저녁 6시 42분, 바쁜 하루를 내려놓는 한 잔.",
+    kickerDisplay: "노을이 물드는 저녁 6시 42분,\n바쁜 하루를 내려놓는 한 잔.",
     description: "히비스커스의 산뜻한 산미에 루이보스의 부드러운 풍미와 장미 꽃잎의 은은한 향을 더한 블렌드. 상큼하면서도 향긋한 맛으로 하루의 피로를 잠시 잊고 기분을 전환하기 좋습니다.",
     blend: "Herbal Infusion",
     ingredients: "히비스커스, 루이보스, 장미 꽃잎",
@@ -109,6 +113,7 @@ const HUE_PRODUCTS = {
     name: "Blue Hour Chamomile",
     flavor: "BLUE HOUR CHAMOMILE",
     kicker: "잠들기 전, 편안한 밤을 위한 3분.",
+    kickerDisplay: "잠들기 전,\n편안한 밤을 위한 3분.",
     description: "캐모마일의 부드러운 꽃향에 말린 사과의 은은한 단맛을 더한 블렌드. 카페인 부담 없이 즐길 수 있어 잠들기 전 따뜻하게 마시기 좋은 허브티입니다.",
     blend: "Herbal Infusion",
     ingredients: "캐모마일, 말린 사과, 콘플라워",
@@ -368,6 +373,7 @@ function initProductPage() {
   setText("[data-product-name]", product.name);
   setText("[data-review-product]", product.name);
   setText("[data-product-kicker]", product.kicker);
+  setText("[data-product-kicker-large]", product.kickerDisplay || product.kicker);
   setText("[data-product-description]", product.description);
   setText("[data-product-blend]", product.blend);
   setText("[data-product-ingredients]", product.ingredients);
