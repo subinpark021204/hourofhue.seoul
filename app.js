@@ -8,7 +8,7 @@ const HUE_PRODUCTS = {
     kickerDisplay: "아침 햇살이 비치는\n북촌의 골목.",
     description: "홍차의 깊고 깔끔한 맛에 베르가못의 산뜻한 시트러스 향이 더해진 블렌드. 콘플라워의 은은한 꽃향이 어우러져 가볍고 상쾌하게 하루를 시작하기 좋습니다.",
     blend: "Black tea blend",
-    ingredients: "블랙티, 베르가못 필, 콘플라워",
+    ingredients: "BLACK TEA, BERGAMOT PEEL, CORNFLOWER",
     hour: "북촌의 지붕 위로 아침 햇살이 번지는 8시. 하루의 시작을 맑게 여는 시간입니다.",
     notes: "홍차의 깊은 풍미, 베르가못의 산뜻한 시트러스 향, 콘플라워의 은은한 꽃향이 어우러진 깔끔한 맛.",
     quote: "“하루가 시작되기 전, 나를 위한 첫 번째 한 잔.”",
@@ -35,7 +35,7 @@ const HUE_PRODUCTS = {
     kickerDisplay: "바쁜 오전,\n잠시 쉬어가는 한 잔.",
     description: "화이트티의 은은한 풍미에 말린 배의 부드러운 단맛과 볶은 현미의 고소한 향을 더한 블렌드. 자극적이지 않고 담백한 맛으로 바쁜 오전에도 부담 없이 즐기기 좋습니다.",
     blend: "White tea blend",
-    ingredients: "화이트티, 말린 배, 볶은 현미",
+    ingredients: "WHITE TEA, DRIED PEAR, ROASTED BROWN RICE",
     hour: "오전 11시, 하루가 본격적으로 바빠지는 시간. 서촌의 조용한 골목에서 영감을 받아, 잠시 하던 일을 멈추고 차 한 잔을 즐길 수 있도록 만들었습니다.",
     notes: "화이트티의 섬세한 풍미, 말린 배의 은은한 단맛, 볶은 현미의 고소한 향이 어우러진 부드럽고 깔끔한 맛.",
     quote: "“바쁜 하루에도 잠깐의 쉼은 필요하니까.”",
@@ -62,7 +62,7 @@ const HUE_PRODUCTS = {
     kickerDisplay: "오후 4시,\n기분을 전환하는 한 잔",
     description: "블랙티에 로스티드 카카오닙스의 깊고 고소한 풍미와 오렌지필의 산뜻한 향을 더한 블렌드. 커피처럼 진하고 쌉쌀한 맛을 즐기면서도 한결 가볍게 마실 수 있는 오후의 티입니다.",
     blend: "Black Tea Blend",
-    ingredients: "블랙티, 로스티드 카카오닙스, 오렌지필",
+    ingredients: "BLACK TEA, ROASTED CACAO NIBS, ORANGE PEEL",
     hour: "오후 4시, 집중력이 떨어지고 잠시 쉬어가고 싶은 시간. 성수의 활기찬 작업실과 거리에서 영감을 받아, 익숙한 커피 대신 새로운 맛으로 기분을 전환할 수 있는 블렌드를 만들었습니다.",
     notes: "블랙티의 진한 풍미, 카카오닙스의 고소하고 쌉쌀한 맛, 오렌지필의 상큼한 향이 어우러진 깔끔한 마무리.",
     quote: "“오후 4시, 잠깐의 기분 전환이 필요한 순간.”",
@@ -87,16 +87,16 @@ const HUE_PRODUCTS = {
     flavor: "ROSE HIBISCUS",
     kicker: "노을이 물드는 저녁 6시 42분, 바쁜 하루를 내려놓는 한 잔.",
     kickerDisplay: "노을이 물드는 저녁 6시 42분,\n바쁜 하루를 내려놓는 한 잔.",
-    description: "히비스커스의 산뜻한 산미에 루이보스의 부드러운 풍미와 장미 꽃잎의 은은한 향을 더한 블렌드. 상큼하면서도 향긋한 맛으로 하루의 피로를 잠시 잊고 기분을 전환하기 좋습니다.",
+    description: "히비스커스의 산뜻한 산미에 건조 체리의 새콤달콤한 풍미와 장미 꽃잎의 은은한 향을 더한 블렌드. 상큼하면서도 향긋한 맛으로 하루의 피로를 잠시 잊고 기분을 전환하기 좋습니다.",
     blend: "Herbal Infusion",
-    ingredients: "히비스커스, 루이보스, 장미 꽃잎",
+    ingredients: "HIBISCUS, DRIED CHERRY, ROSE PETALS",
     hour: "오후 6시 42분, 퇴근길의 연남동 골목이 노을빛으로 물드는 시간. 분주했던 하루를 뒤로하고, 좋아하는 사람과 이야기를 나누거나 혼자만의 시간을 즐기기 좋은 저녁입니다.",
-    notes: "히비스커스의 선명한 산미, 루이보스의 부드러운 풍미, 장미 꽃잎의 은은한 향이 어우러진 산뜻한 맛.",
+    notes: "히비스커스의 선명한 산미, 건조 체리의 새콤달콤한 풍미, 장미 꽃잎의 은은한 향이 어우러진 산뜻한 맛.",
     quote: "“노을이 지는 시간, 잠시 멈춰 하루를 돌아보는 한 잔.”",
     moment: "assets/images/ingredient-moment-yeonnam.webp",
     ingredientSlides: [
       { name: "히비스커스", en: "HIBISCUS", copy: "루비빛 색과 선명한 산미가 블렌드의 첫인상을 생기 있게 엽니다.", focus: "22% 72%" },
-      { name: "루이보스", en: "ROOIBOS", copy: "매끄럽고 부드러운 바디가 꽃과 과실의 향을 편안하게 받쳐줍니다.", focus: "50% 72%" },
+      { name: "건조 체리", en: "DRIED CHERRY", copy: "건조 체리의 새콤달콤한 과실감이 붉은 꽃향 사이에 생기 있는 중심을 더합니다.", focus: "50% 72%" },
       { name: "장미 꽃잎", en: "ROSE PETAL", copy: "장미 꽃잎의 향긋한 여운이 해 질 무렵의 공기처럼 길게 남습니다.", focus: "78% 72%" }
     ],
     pack: "assets/images/pack-yeonnam.png",
@@ -116,7 +116,7 @@ const HUE_PRODUCTS = {
     kickerDisplay: "잠들기 전,\n편안한 밤을 위한 3분.",
     description: "캐모마일의 부드러운 꽃향에 말린 사과의 은은한 단맛을 더한 블렌드. 카페인 부담 없이 즐길 수 있어 잠들기 전 따뜻하게 마시기 좋은 허브티입니다.",
     blend: "Herbal Infusion",
-    ingredients: "캐모마일, 말린 사과, 콘플라워",
+    ingredients: "CHAMOMILE, DRIED APPLE, CORNFLOWER",
     hour: "자정, 해방촌 언덕 위로 내려다보이는 서울의 밤. 바쁘게 보낸 하루를 마치고 온전히 나에게 집중할 수 있는 시간입니다. 잠들기 전 따뜻한 차 한 잔으로 하루를 마무리해 보세요.",
     notes: "캐모마일의 부드러운 꽃향, 말린 사과의 은은한 단맛이 어우러진 편안하고 깔끔한 맛.",
     quote: "“잠들기 전 3분, 오늘 밤도 편안하게.”",
@@ -448,14 +448,14 @@ function initIngredientExperience() {
       <div class="ingredient-focus" style="--ingredient-image:url('${product.detail}');--ingredient-focus:${ingredient.focus}" aria-hidden="true"></div>
       <div class="ingredient-slide-copy">
         <span>${String(index + 1).padStart(2, "0")} / ${String(ingredients.length).padStart(2, "0")}</span>
-        <p>${ingredient.en}</p>
-        <h3>${ingredient.name}</h3>
+        <p>RAW INGREDIENT</p>
+        <h3>${ingredient.en}</h3>
         <p>${ingredient.copy}</p>
       </div>
     </article>`).join("");
 
   pagination.innerHTML = ingredients.map((ingredient, index) => `
-    <button type="button" data-ingredient-index="${index}" aria-label="${ingredient.name} 보기" aria-pressed="${index === 0}">${String(index + 1).padStart(2, "0")}</button>`).join("");
+    <button type="button" data-ingredient-index="${index}" aria-label="${ingredient.en} 보기" aria-pressed="${index === 0}">${String(index + 1).padStart(2, "0")}</button>`).join("");
 
   const slides = [...track.querySelectorAll(".ingredient-slide")];
   const dots = [...pagination.querySelectorAll("button")];

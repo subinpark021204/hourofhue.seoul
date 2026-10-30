@@ -56,7 +56,7 @@ window.HUE_TEA_FINDER_DATA = {
       detailUrl: "product.html?blend=yeonnam",
       color: "#d18e78",
       ink: "#472d28",
-      flavor: "루비빛 히비스커스의 선명한 산미, 루이보스의 부드러운 바디, 장미 꽃잎의 향긋한 마무리",
+      flavor: "루비빛 히비스커스의 선명한 산미, 건조 체리의 새콤달콤한 과실감, 장미 꽃잎의 향긋한 마무리",
       caffeine: "정보 확인 중 · 추후 업데이트",
       brew: "티백 1개 · 뜨거운 물 250 ml · 3분",
       type: "마음의 색을 깨우는 사람",
