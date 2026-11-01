@@ -1234,14 +1234,14 @@ body { background: #f2f0eb; }
 .marker-haebangchon img { transform: scaleY(1.16); }
 
 /* 2026-10-30 · Illustrated Seoul map and five-package fan */
-.brand-hero-map.is-illustrated-map { background: #faf7ed; }
+.brand-hero-map.is-illustrated-map { background: #f4f1e8; }
 .is-illustrated-map .map-meta { color: #173047; mix-blend-mode: multiply; }
-.is-illustrated-map .map-caption { color: #173047; }
 .is-illustrated-map .seoul-map {
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: saturate(.84) contrast(.98);
   transform: none;
 }
 .is-illustrated-map .map-marker-layer {
@@ -1250,33 +1250,42 @@ body { background: #f2f0eb; }
   height: 100%;
 }
 .is-illustrated-map .map-marker {
-  width: clamp(66px,7vw,96px);
+  width: clamp(72px,7.5vw,106px);
   aspect-ratio: 1;
   border-radius: 12px;
   transform: translate(-50%,-50%);
 }
-.is-illustrated-map .map-marker img { opacity: 0; }
+.is-illustrated-map .map-marker img {
+  opacity: 1;
+  transform: none;
+  filter: drop-shadow(0 10px 10px rgba(49,42,33,.22));
+  transition: filter .35s ease;
+}
 .is-illustrated-map .map-marker::after {
   position: absolute;
-  inset: -5px;
+  right: 8px;
+  bottom: -18px;
+  left: 8px;
   display: grid;
-  place-items: end center;
-  padding-bottom: 4px;
-  content: "SHOP";
-  color: #173047;
-  border: 1px solid rgba(23,48,71,.6);
-  border-radius: 12px;
-  background: rgba(255,255,255,.08);
+  place-items: center;
+  min-height: 22px;
+  content: "VIEW BLEND ↗";
+  color: #f5f1e7;
+  border-radius: 2px;
+  background: #173047;
   font-size: 7px;
   font-weight: 700;
   letter-spacing: .12em;
   opacity: 0;
+  transform: translateY(-5px);
   transition: opacity .25s ease,transform .35s var(--ease);
 }
 .is-illustrated-map .map-marker:hover,
-.is-illustrated-map .map-marker:focus-visible { transform: translate(-50%,-54%) scale(1.05); }
+.is-illustrated-map .map-marker:focus-visible { z-index: 10; outline: 0; transform: translate(-50%,-56%) scale(1.09); }
+.is-illustrated-map .map-marker:hover img,
+.is-illustrated-map .map-marker:focus-visible img { filter: drop-shadow(0 16px 14px rgba(49,42,33,.3)); }
 .is-illustrated-map .map-marker:hover::after,
-.is-illustrated-map .map-marker:focus-visible::after { opacity: 1; transform: translateY(-2px); }
+.is-illustrated-map .map-marker:focus-visible::after { opacity: 1; transform: translateY(0); }
 .is-illustrated-map .marker-yeonnam { --x:24.4%; --y:35.6%; }
 .is-illustrated-map .marker-seochon { --x:42.2%; --y:24.5%; }
 .is-illustrated-map .marker-bukchon { --x:69.9%; --y:24.6%; }
