@@ -387,11 +387,24 @@ function initProductPage() {
 
   const quote = document.querySelector("[data-product-quote]");
   if (quote) {
-    quote.textContent = "";
-    product.quote.split("\n").forEach((line, index) => {
-      if (index) quote.append(document.createElement("br"));
-      quote.append(document.createTextNode(line));
-    });
+    const quoteText = product.quote.replace(/^“\s*/, "").replace(/\s*”$/, "");
+    quote.replaceChildren();
+
+    const openingMark = document.createElement("span");
+    openingMark.className = "quote-mark quote-mark-open";
+    openingMark.setAttribute("aria-hidden", "true");
+    openingMark.textContent = "“";
+
+    const text = document.createElement("span");
+    text.className = "quote-text";
+    text.textContent = quoteText;
+
+    const closingMark = document.createElement("span");
+    closingMark.className = "quote-mark quote-mark-close";
+    closingMark.setAttribute("aria-hidden", "true");
+    closingMark.textContent = "”";
+
+    quote.append(openingMark, text, closingMark);
   }
 
   const images = [
