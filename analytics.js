@@ -95,6 +95,7 @@
           view_item: "ViewContent",
           add_to_cart: "AddToCart",
           begin_checkout: "InitiateCheckout",
+          lead_form_complete: "Lead",
           search: "Search"
         }[eventName];
 
@@ -103,6 +104,18 @@
             value: Number(payload.value) || 0,
             currency: "KRW"
           });
+        } else if (eventName === "lead_form_complete") {
+          const leadParameters = {
+            form_name: payload.form_name || "lead_form"
+          };
+
+          if (payload.product_id) {
+            leadParameters.content_ids = [payload.product_id];
+            leadParameters.content_name = payload.product_name || payload.product_id;
+            leadParameters.content_type = "product";
+          }
+
+          fbq("track", "Lead", leadParameters);
         } else if (metaEventName) {
           fbq("track", metaEventName);
         } else {
@@ -223,6 +236,7 @@
       track(valid ? "lead_form_complete" : "lead_form_error", {
         form_name: name,
         product_id: productId || "bukchon",
+        product_name: clean(document.querySelector("[data-product-name]")?.textContent, 80),
         error_type: valid ? undefined : "validation"
       });
       return;
