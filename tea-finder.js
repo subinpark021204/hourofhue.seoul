@@ -199,6 +199,7 @@
       gateForm.reportValidity();
       return;
     }
+    if (window.sendLeadLog) window.sendLeadLog();
     recipientName = nameField.value;
     resultKey = scoreAnswers(answerState).key;
     gateForm.reset();

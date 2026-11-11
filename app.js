@@ -289,6 +289,7 @@ function initOfferModal() {
         invalid[0].focus();
         return;
       }
+      if (window.sendLeadLog) window.sendLeadLog();
       form.reset();
       window.location.assign("result.html?offer=15");
     });
@@ -349,6 +350,7 @@ function initPrivacyForm() {
   ok.addEventListener("click", () => {
     if (!agree.checked) return;
     if (pendingSubmit && form) {
+      if (window.sendLeadLog) window.sendLeadLog();
       form.reset();
       window.location.assign("result.html");
       return;
